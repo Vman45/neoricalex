@@ -2,31 +2,21 @@
 
 ## Aula: Atualizar para o WSL 2
 
-```bash
+```powershell
 # No Powershell
-
 ## Iniciar Powershell como Admin
 Start-Process powershell -Verb runAs
 
-## Baixar Atualização WSL
+## Baixar o pacote de atualização do último kernel do Linux para o WSL 2 para computadores x64.
+# REF: https://docs.microsoft.com/pt-br/windows/wsl/wsl2-kernel
 Invoke-WebRequest -Uri https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi -OutFile wsl_update_x64.msi -UseBasicParsing
 
-## Instalar atualização WSL2
-wsl_update_x64.msi
+## Instalar o pacote de atualização
+.\wsl_update_x64.msi
 
-## Remover pacote de Atualização
+## Remover o pacote de atualização
 rm wsl_update_x64.msi
 
-## REINICIAR O PC ##
-
-## Verificar versão do WSL
-wsl --list --verbose
-
-## Setar Ubuntu como WSL2
-wsl --set-version Ubuntu-20.04 2
-
-## Reiniciar o PC ##
-
-## Verificar versão do WSL
-wsl --list --verbose
+## Definir o WSL 2 como versão padrão
+wsl --set-default-version 2
 ```
