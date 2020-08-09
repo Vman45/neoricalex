@@ -1,4 +1,10 @@
+# COPED - Curso Online para Empreendedores(as) Digitais
+
+## Aula: Instalar a distribuição do Linux Ubuntu
+
+```powershell
 ## Baixar a distribuição do Linux Ubuntu
+cd coped/software/windows
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
 
 ## Extrair e instalar a distribuição
@@ -11,4 +17,6 @@ cd .\Ubuntu\
 ### Quando solicitado digite:
 <Seu nome de usuário>
 <Uma senha 2x>
+
+cd ../../../
 ```

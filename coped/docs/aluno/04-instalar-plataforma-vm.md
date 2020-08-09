@@ -8,10 +8,10 @@
 ## Iniciar Powershell como Admin
 Start-Process powershell -Verb runAs
 
-## Habilitar o componente opcional "Plataforma de máquina virtual"
+## Habilitar o componente "Plataforma de máquina virtual"
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 
-## Instalar o Subsistema Windows para Linux
+## Habilitar o componente "Subsistema Windows para Linux"
 # REF: https://docs.microsoft.com/pt-br/windows/wsl/install-win10
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 
