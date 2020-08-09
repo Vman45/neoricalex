@@ -1,13 +1,5 @@
 # COPED - Curso Online para Empreendedores(as) Digitais
 
-Esta documentação é parte integrante do [COPED - Curso Online para Empreendedores Digitais](https://neoricalex.com.br/courses/coped/), e parte do pressuposto de que os requerimentos abaixo já foram instalados:
-
-* WSL (Sub Sistema Windows para Linux)
-* Git
-* Visual Studio Code
-* Vagrant
-* Virtual Box
-
 ## Aula: Instalar o LAMP
 
 ```bash
@@ -21,7 +13,7 @@ sudo apt install apache2
 sudo ufw allow in "Apache Full"
 
 # Instalar e configurar o MySQL
-sudo apt install mysql-server
+sudo apt install default-mysql-server
 sudo mysql_secure_installation
 
 # Instalar o PHP
