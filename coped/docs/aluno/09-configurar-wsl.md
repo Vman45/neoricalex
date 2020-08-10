@@ -1,3 +1,3 @@
 # COPED - Curso Online para Empreendedores(as) Digitais
 
-## Aula: Linkar pasta neoricalex
+## Aula: Configurar WSL no VS Code
