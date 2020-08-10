@@ -5,7 +5,7 @@
 ```powershell
 ## Baixar a distribuição do Linux Ubuntu
 cd coped/software/windows
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-2004 -OutFile Ubuntu.appx -UseBasicParsing
 
 ## Extrair e instalar a distribuição
 # REF: https://docs.microsoft.com/en-us/windows/wsl/install-on-server
@@ -18,5 +18,5 @@ cd .\Ubuntu\
 <Seu nome de usuário>
 <Uma senha 2x>
 
-cd ../../../
+cd ../../../..
 ```
