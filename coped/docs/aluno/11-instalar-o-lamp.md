@@ -10,19 +10,34 @@ sudo apt update
 git pull
 
 # Instalar o Apache
-sudo apt install apache2
+sudo apt install apache2 -y
+
+# Reiniciar para testar o Apache
+sudo service apache2 restart
 
 # Configurar a Firewall
 sudo ufw allow in "Apache Full"
 
-# Instalar e configurar o MySQL
-sudo apt install default-mysql-server
+# Instalar o MySQL
+sudo apt install default-mysql-server -y
+
+# Iniciar o MySQL
+sudo /etc/init.d/mysql start
+
+# Configurar respondendo com as respostas abaixo:
 sudo mysql_secure_installation
+# N
+# Digitar a senha 2x
+# Y
+# Y
+# Y
+# Y
 
 # Instalar o PHP
-sudo apt install php libapache2-mod-php php-mysql
+sudo apt install php libapache2-mod-php php-mysql -y
 
 # Setar o index e reiniciar o Apache
 sudo vi /etc/apache2/mods-enabled/dir.conf
-sudo systemctl restart apache2
+
+sudo service apache2 restart
 ```
