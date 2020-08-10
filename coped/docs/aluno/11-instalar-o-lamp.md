@@ -3,8 +3,11 @@
 ## Aula: Instalar o LAMP
 
 ```bash
-# Atualizar os repositórios
+# Atualizar os repositórios do Ubuntu
 sudo apt update
+
+# Atualizar o neoricalex
+git pull
 
 # Instalar o Apache
 sudo apt install apache2
