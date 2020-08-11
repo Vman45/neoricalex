@@ -27,7 +27,7 @@ Um dos contras, é que você tem que fazer tudo você mesmo. Se estiver afim de 
 
 ### Auto-Financiamento
 
-Projetos precisam de apoio financeiro, coisa que eu não tenho. Tudo o que está aqui é fruto de meu trabalho e pesquisa ao longo dos anos. Para que o [NEORICALEX](https://neoricalex.com.br/) exista, e para que eu possa continuar a compartilhar meu conhecimento é necessário dinheiro. Então a melhor forma de monetizar que encontrei, foi a de produzir um Curso Online a que dei o nome de [COPED](./coped/README.md).
+Projetos precisam de apoio financeiro, coisa que eu não tenho. Tudo o que está aqui é fruto de meu trabalho e pesquisa ao longo dos anos. Para que o [NEORICALEX](https://neoricalex.com.br/) exista, e para que eu possa continuar a compartilhar meu conhecimento é necessário dinheiro. Então a melhor forma de monetizar que encontrei, foi a de produzir um Curso Online a que dei o nome de [COPED](https://github.com/neoricalex/coped/README.md).
 
 Caso esteja interessado(a) em saber como o projeto está a ser produzido, e quer saber como duplicar para sua Startup e/ou PME visite a página do [COPED](https://neoricalex.com.br/courses/coped/).
 
