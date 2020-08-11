@@ -1,0 +1,87 @@
+#!/bin/bash
+
+echo "# INFO: Configurando as cores no servidor.nfdos..."
+inicio_cor="\033[0;32m"
+cor_amarela="\033[0;93m"
+fim_cor="\033[0m"
+
+echo -e "$cor_amarela # TODO: Criar uma Pool ZFS $fim_cor"
+# REF: 
+#   https://ubuntu.com/tutorials/setup-zfs-storage-pool#1-overview
+#   https://www.thegeekdiary.com/zfs-tutorials-creating-zfs-pools-and-file-systems/
+#   https://github.com/linuxdabbler/debian-install-scripts/blob/master/107-zfs.sh
+#apt install -y linux-headers-"$(uname -r)" linux-image-amd64
+apt install zfsutils-linux zfs-test zfs-dkms -y
+modprobe zfs
+systemctl enable zfs.target
+systemctl enable zfs-import cache
+systemctl enable zfs-mount
+systemctl enable zfs-import.target
+systemctl enable zfs-import-scan
+systemctl enable zfs-share
+#mkfile 1G $NEORICALEX/dev/nfdos/pool
+#zpool create npool $NEORICALEX/dev/nfdos/pool
+#zpool create -f -m $NEORICALEX/dev/nfdos/pool npool mirror /dev/sda /dev/sdb
+
+echo -e "$cor_amarela # TODO: Criar um contentor LXD/LXC $fim_cor"
+# TODO: Depois da Pool:
+#           Iniciar o LXD:
+#           Criar um contentor LXC:
+#           Outros Detalhes:
+#               https://discuss.linuxcontainers.org/t/how-to-export-lxc-container-as-image-tarball/1458/2
+
+#echo "Criar o Cluster LXD/LXC"
+#cd $NEORICALEX_DEV_BACKEND
+#bash shell
+
+echo -e "$cor_amarela # TODO: Criar um contentor Docker $fim_cor"
+# TODO: Depois do Container
+#           Iniciar o Docker: Em curso ...
+#echo -e "$inicio_cor Agora instalar o Docker ... $fim_cor"
+#if [ ! -x "$(command -v docker)" ]; then
+#    apt install apt-transport-https ca-certificates curl software-properties-common -y
+#    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+#    apt-get update
+#    apt install docker-ce docker-ce-cli containerd.io -y
+#    usermod -aG docker $USER
+#    service docker start
+#else
+#    echo "O Docker já está instalado."
+#    service docker stop
+#    service docker start
+#fi
+
+#echo -e "$inicio_cor Agora instalar o Docker Compose... $fim_cor"
+#if [ ! -f "/usr/local/bin/docker-compose" ]; then
+#    curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+#    chmod +x /usr/local/bin/docker-compose
+#else
+#    echo "O Docker compose já está instalado."
+#fi
+
+echo -e "$cor_amarela # TODO: Iniciar o Backend (CLI/Web/Etc) $fim_cor"
+# TODO: Depois do Docker
+#           Iniciar o Backend (CLI/Web/Etc): Em curso ...
+#           Apache Prod: https://www.youtube.com/watch?v=Xjdv31k-Kf4&t=1383s
+
+#echo -e "$inicio_cor Checkando se o $NEORICALEX_VENV existe... $fim_cor"
+#if [ ! -d "$NEORICALEX_VENV" ]; then
+#    echo "O $NEORICALEX_VENV não existe. Vamos criar ele"
+#    apt install -y python3-pip python3-venv
+#    python3 -m venv $NEORICALEX_VENV
+#else
+#    echo "O $NEORICALEX_VENV já existe."
+#fi
+
+#echo -e "$inicio_cor Ativando o $NEORICALEX_VENV... $fim_cor"
+#source $NEORICALEX_VENV/bin/activate
+
+#echo -e "$inicio_cor Removendo a $NEORICALEX_VENV... $fim_cor"
+#rm -rf $NEORICALEX_VENV
+
+#echo -e "$inicio_cor Testando... $fim_cor"
+#cp -a $NFDOS_DEV/root /root/.
+# Casper >> https://help.ubuntu.com/community/LiveCDCustomization
+# Opções Casper >> http://manpages.ubuntu.com/manpages/bionic/man7/casper.7.html
+# Persistencia >> https://help.ubuntu.com/community/LiveCDCustomizationFromScratch

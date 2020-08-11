@@ -1,0 +1,144 @@
+# REF: https://misc.flogisoft.com/bash/tip_colors_and_formatting
+inicio_cor="\033[0;32m"
+cor_amarela="\033[0;93m"
+fim_cor="\033[0m"
+
+echo -e "$inicio_cor Executando o rootfs.nfdos $fim_cor"
+
+echo -e "$inicio_cor Montando o /proc /sys e /dev/pts $fim_cor"
+mount none -t proc /proc
+mount none -t sysfs /sys
+mount none -t devpts /dev/pts
+
+echo -e "$inicio_cor Exportando as variáveis de ambiente $fim_cor"
+export HOME=/root
+#export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
+export LC_ALL="C"
+
+echo -e "$inicio_cor Adicionando a sources.list dos pacotes deb $fim_cor"
+cat <<EOF > /etc/apt/sources.list
+deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+
+deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+
+deb http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+
+deb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+
+deb http://archive.canonical.com/ubuntu focal partner
+deb-src http://archive.canonical.com/ubuntu focal partner
+EOF
+
+echo -e "$inicio_cor Atualizando o gerenciador de pacotes deb $fim_cor"
+apt update
+
+echo -e "$inicio_cor Instalando o systemd $fim_cor"
+apt install -y systemd-sysv 
+
+echo -e "$inicio_cor Criando o divert $fim_cor"
+dbus-uuidgen > /etc/machine-id
+ln -fs /etc/machine-id /var/lib/dbus/machine-id
+dpkg-divert --local --rename --add /sbin/initctl
+ln -s /bin/true /sbin/initctl
+
+echo -e "$inicio_cor Instalando os pacotes base $fim_cor"
+apt install -y \
+    ubuntu-minimal \
+    casper \
+    lupin-casper \
+    discover \
+    laptop-detect \
+    os-prober \
+    network-manager \
+    resolvconf \
+    net-tools \
+    wireless-tools \
+    wpagui \
+    locales \
+    linux-generic
+
+#echo -e "$inicio_cor Configurando o usuário ROOT ... $fim_cor"
+#echo -e "$inicio_cor Digite a senha para o $USER ... $fim_cor"
+#passwd
+
+#echo -e "$inicio_cor Instalando o SUDO ... $fim_cor"
+#apt install sudo
+
+#echo -e "$inicio_cor Digite o nome de usuário ADMIN que terá acesso ao grupo dos sudoers: $fim_cor" 
+#read usuario  
+
+#echo -e "$inicio_cor Criando o usuário com o nome: $usuario ...$fim_cor"  
+#useradd -s /bin/bash -d /home/$usuario -m -G sudo $usuario
+
+#echo -e "$inicio_cor Digite a senha que pretende para o usuário \"$usuario\" $fim_cor"
+#passwd $usuario
+
+#echo -e "$inicio_cor Configurando a HOME para o \"$usuario\" $fim_cor"
+#export HOME=/home/$usuario
+
+echo -e "$inicio_cor Instalar umas ferramentas básicas $fim_cor"
+apt install -y \
+    apt-transport-https \
+    curl \
+    less \
+    git
+
+echo -e "$inicio_cor Configurar o idioma $fim_cor"
+dpkg-reconfigure locales
+
+#echo -e "$inicio_cor Configurar o NEORICALEX $fim_cor"
+#export NEORICALEX=/home/$usuario/Web
+
+#echo -e "$inicio_cor Checkando se a $NEORICALEX existe $fim_cor "
+#if [ ! -d "$NEORICALEX" ]; then
+#    git clone https://github.com/neoricalex/neoricalex $NEORICALEX
+#else
+#    echo -e "$inicio_cor A $NEORICALEX existe. Checkando por atualizações... $fim_cor"
+#    cd $NEORICALEX
+#    git pull
+#fi
+
+#echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/desktop.nfdos $fim_cor"
+#bash $NEORICALEX/dev/nfdos/desktop.nfdos 
+
+#echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/servidor.nfdos $fim_cor"
+#bash $NEORICALEX/dev/nfdos/servidor.nfdos 
+
+echo -e "$inicio_cor Removendo pacotes desnecessários $fim_cor"
+apt autoremove -y
+
+echo -e "$inicio_cor Configurando a rede $fim_cor"
+dpkg-reconfigure resolvconf
+
+cat <<EOF > /etc/NetworkManager/NetworkManager.conf
+[main]
+rc-manager=resolvconf
+plugins=ifupdown,keyfile
+dns=dnsmasq
+[ifupdown]
+managed=false
+EOF
+
+dpkg-reconfigure network-manager
+
+echo -e "$inicio_cor Finalizando o divert $fim_cor"
+truncate -s 0 /etc/machine-id
+rm /sbin/initctl
+dpkg-divert --rename --remove /sbin/initctl
+
+echo -e "$inicio_cor Limpando eventuais resquícios da instalação/configuração $fim_cor"
+apt-get clean
+rm -rf /tmp/* ~/.bash_history
+
+echo -e "$inicio_cor Desmontando o /proc /sys e /dev/pts $fim_cor"
+umount /proc
+umount /sys
+umount /dev/pts
+
+echo -e "$inicio_cor Saindo do rootfs.nfdos $fim_cor"
+export HISTSIZE=0
+exit

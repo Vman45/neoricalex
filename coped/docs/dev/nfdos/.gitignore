@@ -1,0 +1,5 @@
+backup/
+dev/nfdos/image/
+dev/nfdos/rootfs/
+dev/nfdos/nfdos.img
+dev/nfdos/nfdos.iso
