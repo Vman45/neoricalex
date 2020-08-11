@@ -29,12 +29,46 @@ sudo apt install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-in
 # Reiniciar o Apache
 sudo service apache2 restart
 
+# Instalar o curl
+sudo apt install curl -y
+
 # Criar a pasta onde vai morar o Wordpress
-mkdir -p /var/www/coped.neoricalex.com.br
+sudo mkdir -p /var/www/neoricalex.com.br
+sudo chown -R neo:neo /var/www/neoricalex.com.br
+cd /var/www/neoricalex.com.br
+
+# Instalar a CLI do Wordpress
+# REF: https://wp-cli.org/
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+php wp-cli.phar --info
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+wp --info
+
+# Fazer o download do WP
+wp core download
+
+# Configurar o wp-config
+wp core config --prompt
+
+# Instalar via WP CLI
+wp core install --prompt
+
+# Entrar no Powershell
+powershell.exe
+
+# Iniciar o Powershell como Admin
+Start-Process powershell -Verb runAs
+
+# Editar o Hosts para configurar o nosso nome de dominio "Fake"
+notepad "drivers/etc/hosts"
+
+# Sair do Powershell e voltar ao bash
+exit
 
 # Configurar o Host Virtual
-cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/coped.neoricalex.com.br.conf
-#<Directory /var/www/coped.neoricalex.com.br/>
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/neoricalex.com.br.conf
+#<Directory /var/www/neoricalex.com.br/>
 #    AllowOverride All
 #    Order allow,deny
 #    Allow from all
@@ -44,9 +78,9 @@ cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/co
 sudo a2enmod rewrite
 
 # Setar permissões
-sudo chown -R www-data:www-data /var/www/coped.neoricalex.com.br
-sudo find /var/www/coped.neoricalex.com.br -type d -exec chmod 750 {} \;
-sudo find /var/www/coped.neoricalex.com.br -type f -exec chmod 640 {} \;
+sudo chown -R www-data:www-data /var/www/neoricalex.com.br
+sudo find /var/www/neoricalex.com.br -type d -exec chmod 750 {} \;
+sudo find /var/www/neoricalex.com.br -type f -exec chmod 640 {} \;
 
 # Reiniciar o Apache
 sudo service apache2 restart
