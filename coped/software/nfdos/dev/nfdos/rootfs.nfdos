@@ -103,10 +103,10 @@ else
 fi
 
 echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/desktop.nfdos $fim_cor"
-bash $NEORICALEX/coped/software/nfdos/dev/nfdos/desktop.nfdos 
+bash $NEORICALEX/coped/software/nfdos/dev/nfdos/core.nfdos 
 
 echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/servidor.nfdos $fim_cor"
-bash $NEORICALEXd/coped/software/nfdos/dev/nfdos/servidor.nfdos 
+bash $NEORICALEXd/coped/software/nfdos/dev/nfdos/updates.nfdos 
 
 echo -e "$inicio_cor Removendo pacotes desnecessários $fim_cor"
 apt autoremove -y

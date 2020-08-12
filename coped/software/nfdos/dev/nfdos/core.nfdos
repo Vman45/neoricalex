@@ -1,9 +1,48 @@
 #!/bin/bash
 
-echo "# INFO: Configurando as cores no servidor.nfdos..."
+echo "# INFO: Configurando as cores no desktop.nfdos..."
 inicio_cor="\033[0;32m"
 cor_amarela="\033[0;93m"
 fim_cor="\033[0m"
+
+echo -e "$inicio_cor Instalando pacotes adicionais para o Live CD $fim_cor"
+apt install -y \
+    ubiquity \
+    ubiquity-casper \
+    ubiquity-frontend-gtk \
+    ubiquity-slideshow-ubuntu \
+    ubiquity-ubuntu-artwork
+
+apt install -y \
+    plymouth-theme-ubuntu-logo
+
+echo -e "$inicio_cor Instalando os pacotes minimos do Gnome Desktop $fim_cor"
+apt install -y  --no-install-recommends \
+    ubuntu-gnome-desktop \
+    ubuntu-gnome-wallpapers
+
+#echo -e "$inicio_cor Checkar o Visual Studio Code está instalado $fim_cor"
+#if [ ! -x "$(command -v code)" ]; then
+#    echo -e "$inicio_cor Instalando o Visual Studio Code $fim_cor"
+#    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+#    install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+#    echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+#    rm microsoft.gpg
+#    apt update
+#    apt install -y code
+#fi
+
+#echo -e "$cor_amarela # TODO: Checkar se o Chrome está instalado $fim_cor"
+#echo -e "$inicio_cor Instalando o Google Chrome... $fim_cor"
+#echo -e "$cor_amarela # TODO: Adicionar uma Key Pública do Chrome $fim_cor"
+#wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+#echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+
+#apt update
+#apt install -y google-chrome-stable
+
+#echo -e "$inicio_cor Instalar o Java $fim_cor" # TODO: Checkar um comando do java
+#apt install -y openjdk-8-jdk openjdk-8-jre
 
 echo -e "$cor_amarela # TODO: Criar uma Pool ZFS $fim_cor"
 # REF: 
