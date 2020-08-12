@@ -14,6 +14,8 @@ Eu poderia fazer como todo o mundo e otimizar. No entanto eu quero ir por outra 
 * Um ambiente de homologação
 * Um ambiente de produção
 
+Dessa forma eu terei a certeza que, se o Wordpress estiver lento, a culpa será maioritáriamente minha, e não da hospedagem, plugins, imagens, servidor web, ou seja lá aquilo que fôr.
+
 ### Ambiente de desenvolvimento
 
 No ambiente de desenvolvimento eu apenas quero precisar:
