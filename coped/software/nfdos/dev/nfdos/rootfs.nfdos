@@ -61,24 +61,24 @@ apt install -y \
     locales \
     linux-generic
 
-#echo -e "$inicio_cor Configurando o usuário ROOT ... $fim_cor"
-#echo -e "$inicio_cor Digite a senha para o $USER ... $fim_cor"
-#passwd
+echo -e "$inicio_cor Configurando o usuário ROOT ... $fim_cor"
+echo -e "$inicio_cor Digite a senha para o $USER ... $fim_cor"
+passwd
 
-#echo -e "$inicio_cor Instalando o SUDO ... $fim_cor"
-#apt install sudo
+echo -e "$inicio_cor Instalando o SUDO ... $fim_cor"
+apt install sudo
 
-#echo -e "$inicio_cor Digite o nome de usuário ADMIN que terá acesso ao grupo dos sudoers: $fim_cor" 
-#read usuario  
+echo -e "$inicio_cor Digite o nome de usuário ADMIN que terá acesso ao grupo dos sudoers: $fim_cor" 
+read usuario  
 
-#echo -e "$inicio_cor Criando o usuário com o nome: $usuario ...$fim_cor"  
-#useradd -s /bin/bash -d /home/$usuario -m -G sudo $usuario
+echo -e "$inicio_cor Criando o usuário com o nome: $usuario ...$fim_cor"  
+useradd -s /bin/bash -d /home/$usuario -m -G sudo $usuario
 
-#echo -e "$inicio_cor Digite a senha que pretende para o usuário \"$usuario\" $fim_cor"
-#passwd $usuario
+echo -e "$inicio_cor Digite a senha que pretende para o usuário \"$usuario\" $fim_cor"
+passwd $usuario
 
-#echo -e "$inicio_cor Configurando a HOME para o \"$usuario\" $fim_cor"
-#export HOME=/home/$usuario
+echo -e "$inicio_cor Configurando a HOME para o \"$usuario\" $fim_cor"
+export HOME=/home/$usuario
 
 echo -e "$inicio_cor Instalar umas ferramentas básicas $fim_cor"
 apt install -y \
@@ -90,23 +90,23 @@ apt install -y \
 echo -e "$inicio_cor Configurar o idioma $fim_cor"
 dpkg-reconfigure locales
 
-#echo -e "$inicio_cor Configurar o NEORICALEX $fim_cor"
-#export NEORICALEX=/home/$usuario/Web
+echo -e "$inicio_cor Configurar o NEORICALEX $fim_cor"
+export NEORICALEX=/home/$usuario/Web
 
-#echo -e "$inicio_cor Checkando se a $NEORICALEX existe $fim_cor "
-#if [ ! -d "$NEORICALEX" ]; then
-#    git clone https://github.com/neoricalex/neoricalex $NEORICALEX
-#else
-#    echo -e "$inicio_cor A $NEORICALEX existe. Checkando por atualizações... $fim_cor"
-#    cd $NEORICALEX
-#    git pull
-#fi
+echo -e "$inicio_cor Checkando se a $NEORICALEX existe $fim_cor "
+if [ ! -d "$NEORICALEX" ]; then
+    git clone https://github.com/neoricalex/neoricalex $NEORICALEX
+else
+    echo -e "$inicio_cor A $NEORICALEX existe. Checkando por atualizações... $fim_cor"
+    cd $NEORICALEX
+    git pull
+fi
 
-#echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/desktop.nfdos $fim_cor"
-#bash $NEORICALEX/dev/nfdos/desktop.nfdos 
+echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/desktop.nfdos $fim_cor"
+bash $NEORICALEX/dev/nfdos/desktop.nfdos 
 
-#echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/servidor.nfdos $fim_cor"
-#bash $NEORICALEX/dev/nfdos/servidor.nfdos 
+echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/servidor.nfdos $fim_cor"
+bash $NEORICALEX/dev/nfdos/servidor.nfdos 
 
 echo -e "$inicio_cor Removendo pacotes desnecessários $fim_cor"
 apt autoremove -y
