@@ -4,12 +4,22 @@
 
 O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma de Trabalho ou Startup. O local onde eu condenso tudo o que eu sei fazer em TI.
 
-A minha ideia com este projeto é ter um backup em caso de catástrofe. Caso ocorra, eu apenas quero precisar:
+No momento em que a escrever esse texto, o NEORICALEX é básicamente uma instalação do Wordpress como milhões de outras espalhadas pela internet, hospedado na Digital Ocean.
 
-* Instalar a ISO na Máquina (Se a catátrofe ocorreu ao nível do Hardware)
-* Clonar este repositório do git e apontar o A no DNS para o IP da Máquina. (Se a catátrofe foi ao nível Software)
+O que acontece é que, como tantos outros, o Wordpress está super lento. Então urge fazer alguma coisa a respeito.
 
-Além disso, eu também quero que apenas seja necessário de executar um comando para estar pronto a trabalhar no desenvolvimento.
+Eu poderia fazer como todo o mundo e otimizar. No entanto eu quero ir por outra via. Eu quero construir toda uma infraestrutura de raiz. Ou seja:
+
+* Um ambiente de desenvolvimento
+* Um ambiente de homologação
+* Um ambiente de produção
+
+### Ambiente de desenvolvimento
+
+No ambiente de desenvolvimento eu apenas quero precisar:
+
+* Instalar a ISO do Sistema Operativo na Máquina
+* Executar um comando para estar pronto a trabalhar no desenvolvimento.
 
 Para que se possa instalar uma imagem ISO em uma máquina, precisamos ter uma imagem ISO de um sistema operativo.
 
@@ -22,6 +32,14 @@ Aqui neste ponto existem várias opções:
 Eu optei pela terceira opção. Criar um sistema operativo do zero. Isso acarreta bastantes PROS, mas também tem CONTRAS.
 
 Um dos contras, é que você tem que fazer tudo você mesmo. Se estiver afim de embarcar em uma aventura que poderá demorar vidas, mas em que os PROS compensam, seja muito bem-vindo(a)!
+
+### Ambiente de homologação
+
+TODO
+
+### Ambiente de produção
+
+TODO
 
 ## Monetizando
 
