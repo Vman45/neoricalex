@@ -2,9 +2,6 @@
 
 Esta é a pasta com a versão texto do COPED.
 
-Na raiz da pasta estão as aulas numeradas pertencentes ao Ambiente de Desenvolvimento.
+Na raiz da pasta estão as aulas numeradas pertencentes ao Módulo 1.
 
-Além disso, existem também duas sub-pastas:
-
-* Ambiente de Homologação - Versão texto das aulas pertencentes ao Ambiente de Homologação
-* Ambiente de Produção - Versão texto das aulas pertencentes ao Ambiente de Produção
+Além disso, existem também sete sub-pastas referentes aos módulos 2 até ao 8.
