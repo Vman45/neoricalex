@@ -4,7 +4,7 @@
 
 ```bash
 # Atualizar os repositórios do Ubuntu
-sudo apt update
+sudo apt update && sudo apt upgrade -y
 
 # Atualizar o neoricalex
 git pull

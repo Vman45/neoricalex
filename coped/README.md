@@ -33,7 +33,15 @@ Com esta infra-estrutura, você aprenderá a:
 * Montar um e-commerce onde poderá ganhar dinheiro com a venda de produtos físicos e/ou digitais;
 * Montar um sistema de cursos online, LMS, onde poderá ganhar dinheiro com a venda de cursos online.
 
-Depois, você vai aprender a criar um ambiente de homologação, VPS, no qual, além de você transferir o que desenvolveu em seu ambiente de desenvolvimento,  irá também aprender novos conceitos.
+No segundo módulo, irei dar uma especial atenção para todos aqueles e aquelas que não fazem ideia do que é o Wordpress, e/ou, nunca trabalharam com ele. Se não sabe o que são termos como Templates, Plugins, não sabe como adicionar Usuários, ou não sabe o que são páginas e/ou post's, e muito menos sabe editar, criar, e/ou deletar, o segundo módulo é para você.
+
+No terceiro módulo, quando todos estiverem em pé de igualdade, vamos trabalhar na monetização do projeto. Vou ensinar como criar um Blog tendo em atenção o SEO, além de claro, ensinar como você pode monetizar seu conteúdo com publicidade do Google Adsense.
+
+No quarto módulo, depois de já termos o nosso conteúdo monetizando, e você já ter uma boa noção de como se trabalha com o Wordpress, iremos tratar de criar um e-commerce, para aqueles e aquelas que tiverem como projeto principal a venda de produtos fisicos e/ou digitais. Irei ensinar a configurar a Loja, adicionar produtos, configurar uma plataforma de pagamento para que você possa receber o seu dinheiro, e além disso, iremos estar 100% dentro da nova Lei Brasileira de Proteção de Dados chamada LGPD.
+
+No quinto módulo, iremos montar um novo projeto para aqueles que quiserem vender seu conhecimento online através de Cursos. Iremos montar um LMS - Sistema de Gerenciamento Educativo. Além disso, iremos ligar o LMS ao e-commerce. Dessa forma poderá ter um "Tudo em 1". Ou seja, poderá vender produtos fisicos, virtuais, e poderá ainda vender Cursos Online, e tudo isso dentro da mesma Plataforma, e tudo interligado.
+
+Depois, no sexto módulo, quando você já tiver um bom conhecimento de Wordpress, você vai aprender a criar um ambiente de homologação, no qual, além de você transferir o que desenvolveu em seu ambiente de desenvolvimento,  irá também aprender novos conceitos.
 
 Com o ambiente de homologação você aprenderá a:
 
@@ -44,6 +52,8 @@ Com o ambiente de homologação você aprenderá a:
 * Gerenciar e Monitorar a Perfomance de Servidores e Aplicativos;
 * Desenvolver sua própria "Área Comercial" com um sistema completo de Marketing Digital, com páginas de captura, funis de venda, email marketing, auto-responder, SEO, etc...
 
-E por fim, no ambiente de produção, você vai aprender a escalar sua própria infra-estrutura, para que não fique desprevenido com os habituais picos de demanda de seus produtos, como por exemplo no Natal, caso a venda produtos físicos seja a sua principal fonte de renda, assim como,  aprenderá manter uma infra-estrutura que se adeque às necessidades específicas de seu negócio e/ou projeto.
+Será no Ambiente de Homologação que iremos tratar dos aspetos básicos relacionados à Segurança e Perfomance. Embora no Ambiente de Homologação a Segurança e Perfomance não seja o Foco Principal, pois tudo continua sendo feito localmente, você já começará a aplicar os conceitos como se o Servidor de Homologação já fosse o de Produção.  
+
+Por fim, no último módulo, irei ensinar a fazer um "Deploy" para o Ambiente de Produção, onde você vai aprender a escalar sua própria infra-estrutura, para que não fique desprevenido com os habituais picos de demanda de seus produtos, como por exemplo no Natal, caso a venda produtos físicos seja a sua principal fonte de renda, assim como,  aprenderá manter uma infra-estrutura que se adeque às necessidades específicas de seu negócio e/ou projeto.
 
 Este é um curso dinâmico e está em constante desenvolvimento. Ou seja, isso significa que a arquitetura descriminada acima será atualizada periodicamente, assim como o curso e as aulas serão constantemente atualizadas com novidades, novos projetos para renda passiva, novas tecnologias, etc.
