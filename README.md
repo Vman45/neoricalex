@@ -70,7 +70,7 @@ Está pronto(a) para começar?
 
 ```bash
 # Clonar o neoricalex
-git clone https://hithub.com/neoricalex/neoricalex.git
+git clone https://github.com/neoricalex/neoricalex.git
 
 # Entrar na pasta do NFDOS
 cd neoricalex/coped/software/nfdos
