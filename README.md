@@ -16,11 +16,13 @@ Eu poderia fazer como todo o mundo e otimizar. No entanto eu quero ir por outra 
 
 Dessa forma eu terei a certeza que, se o Wordpress estiver lento, a culpa será maioritáriamente minha, e não da hospedagem, plugins, imagens, servidor web, ou seja lá aquilo que fôr.
 
+No entanto o Wordpress é apenas um exemplo. Você pode usar o que vamos construir aqui para aquilo que você quiser.
+
 ### Ambiente de desenvolvimento
 
-O único requesito necessário é ter um computador. Não precisa ter sistema operativo.
+Começando pelo inicio, o único requesito necessário é ter um computador. Não precisa ter sistema operativo. No entanto precisa de um Leitor CD/DVD, e/ou outra forma onde se possa arrancar o computador através de uma imagem ISO. 
 
-No ambiente de desenvolvimento eu apenas quero precisar:
+No ambiente de desenvolvimento (computador) eu apenas quero precisar:
 
 * Instalar a ISO do Sistema Operativo na Máquina
 * Executar um comando para estar pronto a trabalhar no desenvolvimento.
@@ -33,7 +35,7 @@ Aqui neste ponto existem várias opções:
 * Pode seguir a via do Open Source, e baixar uma imagem ISO de uma distribuição *nix com Software gratuito.
 * Ou, você pode criar seu próprio Sistema Operativo.
 
-Eu optei pela terceira opção. Criar um sistema operativo do zero a que dei o nome de [NFDOS](https://github.com/neoricalex/neoricalex/tree/master/coped/software/nfdos).
+Eu optei pela terceira opção. Criar um sistema operativo do zero, a que dei o nome de [NFDOS](https://github.com/neoricalex/neoricalex/tree/master/coped/software/nfdos).
 
 Isso acarreta bastantes PROS, mas também tem CONTRAS.
 
