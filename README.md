@@ -54,7 +54,7 @@ Nele, eu vou ensinar o passo-a-passo de como criar uma infra do completo zero te
 
 Por outras palavras, iremos criar um Ambiente de Desenvolvimento onde iremos desenvolver a versão servidor do [NFDOS](https://github.com/neoricalex/neoricalex/tree/master/coped/software/nfdos), e iremos usar o  [COPED](https://github.com/neoricalex/neoricalex/tree/master/coped) para distribuirmos a versão Cliente da ISO do [NFDOS](https://github.com/neoricalex/neoricalex/tree/master/coped/software/nfdos) que teremos de criar, e que será o nosso Ambiente de Homologação.
 
-Dessa forma eu terei então uma fonte de rendimentos, que me fará (espero) não depender apenas de apoio de terceiros para levar avante toda essa empreitada.
+Dessa forma eu terei então uma fonte de rendimentos, que me fará, espero, não depender apenas de apoio de terceiros para levar avante toda essa empreitada.
 
 ### Ambiente de desenvolvimento
 
