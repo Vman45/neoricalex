@@ -18,16 +18,19 @@ Dessa forma eu terei a certeza que, se o Wordpress estiver lento, a culpa será 
 
 No entanto o Wordpress é apenas um exemplo. Você pode usar o que vamos construir aqui para aquilo que você quiser.
 
-### Ambiente de desenvolvimento
-
 Começando pelo inicio, o único requesito necessário é ter um computador. Não precisa ter sistema operativo. No entanto precisa de um Leitor CD/DVD, e/ou outra forma onde se possa arrancar o computador através de uma imagem ISO. 
 
-No ambiente de desenvolvimento (computador) eu apenas quero precisar:
+Essa imagem ISO terá duas variantes:
 
-* Instalar a ISO do Sistema Operativo na Máquina
-* Executar um comando para estar pronto a trabalhar no desenvolvimento.
+* Versão Privada - Que será o Servidor
+* Versão Pública - Que será o Cliente
 
-Para que se possa instalar uma imagem ISO em uma máquina, precisamos ter uma imagem ISO de um sistema operativo.
+Nesse computador que é o requesito obrigatório, e é onde vamos ter o nosso Servidor "Hospedado", eu apenas quero precisar:
+
+* Instalar a ISO do Sistema Operativo
+* Executar um comando para estar pronto a trabalhar no seu desenvolvimento.
+
+No entanto, claro, para que se possa instalar uma imagem ISO em um computador, precisamos ter uma imagem ISO de um sistema operativo.
 
 Aqui neste ponto existem várias opções:
 
@@ -47,9 +50,15 @@ Uma das coisas que projetos desta envergadura precisam é de apoio financeiro, c
 
 Então a melhor forma de monetizar que encontrei, foi a de produzir um Curso Online a que dei o nome de [COPED](https://github.com/neoricalex/neoricalex/tree/master/coped).
 
-Nele, eu vou ensinar o passo-a-passo de como criar uma infra do completo zero tendo como objetivo final uma instalação Wordpress rápida e segura.
+Nele, eu vou ensinar o passo-a-passo de como criar uma infra do completo zero tendo como objetivo final uma instalação Wordpress rápida e segura. Claro que, repetindo o que já comentei, você não precisa de usar a infra para o Wordpress. Pode perfeitamente usar para qualquer aplicativo, framework ou software que você quiser.
 
-Essa forma me fará então não depender apenas de apoio de terceiros para levar avante toda essa empreitada.
+Por outras palavras, iremos criar um Ambiente de Desenvolvimento onde iremos desenvolver a versão servidor do [NFDOS](https://github.com/neoricalex/neoricalex/tree/master/coped/software/nfdos), e iremos usar o  [COPED](https://github.com/neoricalex/neoricalex/tree/master/coped) para distribuirmos a versão Cliente da ISO do [NFDOS](https://github.com/neoricalex/neoricalex/tree/master/coped/software/nfdos) que teremos de criar, e que será o nosso Ambiente de Homologação.
+
+Dessa forma eu terei então uma fonte de rendimentos, que me fará (espero) não depender apenas de apoio de terceiros para levar avante toda essa empreitada.
+
+### Ambiente de desenvolvimento
+
+TODO
 
 ### Ambiente de homologação
 
