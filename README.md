@@ -69,6 +69,9 @@ Acredito que tudo funcionará em qualquer distribuição baseada no Debian, mas 
 Está pronto(a) para começar?
 
 ```bash
+# Instalar o git
+sudo apt install git -y
+
 # Clonar o neoricalex
 git clone https://github.com/neoricalex/neoricalex.git
 
