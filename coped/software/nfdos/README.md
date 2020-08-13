@@ -38,7 +38,7 @@ Para chegarmos lá, existe ainda um caminho a percorrer. Veja abaixo o ROADMAP p
 
 Os módulos abaixo são meus planos. Não estão necessáriamente em ordem:
 
-* Criar a imagem ISO NFDOS (**Em curso...**)
+* Criar a imagem ISO NFDOS Cliente (**Em curso...**)
 * Criar uma imagem LXD (**Em curso...**)
 * Criar uma imagem Docker (**Em curso...**)
 * Criar um container com Wordpress para amostragem de exemplo e/ou Marketing (**Em curso...**)
@@ -58,7 +58,7 @@ Os módulos abaixo são meus planos. Não estão necessáriamente em ordem:
 
 Os módulos abaixo estão finalizados, ou seja, funcionam como pretendido. Claro que estou melhorando/desenvolvendo, consoante o tempo e as possibilidades permitem.
 
-* N/A
+* Criar a imagem ISO NFDOS Server
 
 ### Ajuda
 
