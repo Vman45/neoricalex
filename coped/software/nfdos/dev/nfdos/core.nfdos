@@ -5,6 +5,8 @@ inicio_cor="\033[0;32m"
 cor_amarela="\033[0;93m"
 fim_cor="\033[0m"
 
+echo -e "$inicio_cor Configurando o /etc/hostname ... echo \"nfdos\" > /etc/hostname $fim_cor"
+
 echo -e "$inicio_cor Instalando pacotes adicionais para o Live CD $fim_cor"
 apt install -y \
     ubiquity \

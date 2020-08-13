@@ -58,7 +58,13 @@ Dessa forma eu terei então uma fonte de rendimentos, que me fará, espero, não
 
 ### Ambiente de desenvolvimento
 
-TODO
+Chegamos então no Ambiente de Desenvolvimento. Aqui é onde vamos criar a ISO da Versão Servidor do [NFDOS](https://github.com/neoricalex/neoricalex/tree/master/coped/software/nfdos).
+
+Claro está que, para criarmos uma ISO precisamos de algumas ferramentas. E, é óbvio, essas ferramentas precisam ser instaladas em um computador pré-existente já com um Sistema Operativo instalado e funcionando.
+
+Você de seu lado poderá usar o sistema e/ou distribuição que você quiser. No entanto todos os automatismos, bibliotecas, pacotes, etc, eu usei como base de trabalho uma Distribuição Linux/Ubuntu.
+
+Acredito que tudo funcionará em qualquer distribuição baseada no Debian, mas enfim, recomendo então que para você começar da melhor maneira, que tenha preparado um computador com uma distribuição Ubuntu com pelo menos a versão 18.04 instalada.
 
 ### Ambiente de homologação
 

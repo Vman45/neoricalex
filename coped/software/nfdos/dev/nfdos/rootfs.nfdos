@@ -102,10 +102,13 @@ else
     git pull
 fi
 
-echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/desktop.nfdos $fim_cor"
+echo -e "$inicio_cor Acertando as permissões na pasta $NEORICALEX ... $fim_cor "
+chown -R $usuario:$usuario $NEORICALEX
+
+echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/core.nfdos $fim_cor"
 bash $NEORICALEX/coped/software/nfdos/dev/nfdos/core.nfdos 
 
-echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/servidor.nfdos $fim_cor"
+echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/updates.nfdos $fim_cor"
 bash $NEORICALEXd/coped/software/nfdos/dev/nfdos/updates.nfdos 
 
 echo -e "$inicio_cor Removendo pacotes desnecessários $fim_cor"

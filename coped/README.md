@@ -33,7 +33,7 @@ Com esta infra-estrutura, você aprenderá a:
 
 No segundo módulo, irei dar uma especial atenção para todos aqueles e aquelas que não fazem ideia do que é o Wordpress, e/ou, nunca trabalharam com ele. Se não sabe o que são termos como Templates, Plugins, não sabe como adicionar Usuários, ou não sabe o que são páginas e/ou post's, e muito menos sabe editar, criar, e/ou deletar, o segundo módulo é para você.
 
-No terceiro módulo, quando todos estiverem em pé de igualdade, vamos trabalhar na monetização do projeto. Vou ensinar como criar um Blog tendo em atenção o SEO, além de claro, ensinar como você pode monetizar seu conteúdo com publicidade do Google Adsense.
+No terceiro módulo, quando todos estiverem em pé de igualdade, ou, por outras palavras, quando todos souberem o "básico" do Wordpress, vamos trabalhar na monetização do projeto. Vou ensinar como criar um Blog tendo em atenção o SEO, além de claro, ensinar como você pode monetizar seu conteúdo com publicidade do Google Adsense.
 
 No quarto módulo, depois de já termos o nosso conteúdo monetizando, e você já ter uma boa noção de como se trabalha com o Wordpress, iremos tratar de criar um e-commerce, para aqueles e aquelas que tiverem como projeto principal a venda de produtos fisicos e/ou digitais. Irei ensinar a configurar a Loja, adicionar produtos, configurar uma plataforma de pagamento para que você possa receber o seu dinheiro, e além disso, iremos estar 100% dentro da nova Lei Brasileira de Proteção de Dados chamada LGPD.
 
