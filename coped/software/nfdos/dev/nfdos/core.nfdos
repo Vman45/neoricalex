@@ -45,19 +45,22 @@ apt install -y  --no-install-recommends \
 #apt install -y openjdk-8-jdk openjdk-8-jre
 
 echo -e "$cor_amarela # TODO: Criar uma Pool ZFS $fim_cor"
+# INFO: A licença não permite ser distribuido junto com a imagem ISO.
 # REF: 
 #   https://ubuntu.com/tutorials/setup-zfs-storage-pool#1-overview
 #   https://www.thegeekdiary.com/zfs-tutorials-creating-zfs-pools-and-file-systems/
 #   https://github.com/linuxdabbler/debian-install-scripts/blob/master/107-zfs.sh
 #apt install -y linux-headers-"$(uname -r)" linux-image-amd64
-apt install zfsutils-linux zfs-test zfs-dkms -y
-modprobe zfs
-systemctl enable zfs.target
-systemctl enable zfs-import cache
-systemctl enable zfs-mount
-systemctl enable zfs-import.target
-systemctl enable zfs-import-scan
-systemctl enable zfs-share
+#apt install zfsutils-linux zfs-test zfs-dkms -y
+#modprobe zfs
+#systemctl enable zfs.target
+#systemctl enable zfs-import cache
+#systemctl enable zfs-mount
+#systemctl enable zfs-import.target
+#systemctl enable zfs-import-scan
+#systemctl enable zfs-share
+
+### FALTA TESTAR ###
 #mkfile 1G $NEORICALEX/dev/nfdos/pool
 #zpool create npool $NEORICALEX/dev/nfdos/pool
 #zpool create -f -m $NEORICALEX/dev/nfdos/pool npool mirror /dev/sda /dev/sdb
