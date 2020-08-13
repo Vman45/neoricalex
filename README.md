@@ -66,6 +66,19 @@ Você de seu lado poderá usar o sistema e/ou distribuição que você quiser. N
 
 Acredito que tudo funcionará em qualquer distribuição baseada no Debian, mas enfim, recomendo então que para você começar da melhor maneira, que tenha preparado um computador com uma distribuição Ubuntu com pelo menos a versão 18.04 instalada.
 
+Está pronto(a) para começar?
+
+```bash
+# Clonar o neoricalex
+git clone https://hithub.com/neoricalex/neoricalex.git
+
+# Entrar na pasta do NFDOS
+cd neoricalex/coped/software/nfdos
+
+# Criar a imagem ISO do NFDOS Server
+bash shell
+```
+
 ### Ambiente de homologação
 
 TODO
