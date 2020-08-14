@@ -71,11 +71,17 @@ bash shell
 ```
 Quando o *bash shell* é executado, ele inicia checkando pelas ferramentas que são necessárias para a criação da ISO. Pacotes como o *binutils, debootstrap, squashfs-tools, xorriso*, etc são requerimentos obrigatórios. Então o *bash shell* começa por instalar eles, se não tiverem já instalados.
 
-Passando essa primeira etapa, o *bash shell* continua criando uma *imagem de disco virtual*, formatando e a deixando pronta para que as restantes etapas.
+Passando essa primeira etapa, o *bash shell* continua criando uma *imagem de disco virtual*, formatando e a deixando pronta para as restantes etapas.
 
-Depois de ter criado o disco virtual, o *bash shell* continua criando o *ROOT FS* mandando executar o *debootstrap* do debian.
+Depois de ter criado o disco virtual, o *bash shell* continua criando o *ROOTFS* mandando executar o *debootstrap* do debian.
 
-Com o *ROOT FS* criado, o *bash shell* continua fazendo todos os *bind's* necessários e entra dentro do *CHROOT*.
+Com o *ROOTFS* criado, o *bash shell* continua fazendo todos os *bind's* necessários e entra dentro do *CHROOT*.
+
+Já dentro do *CHROOT* o *bash shell* continua configurando o *sources.list* e todas as outras coisas essenciais para que se tenha um sistema baseado no *debian* minimamente utilizável. É também aqui nesta parte que a "Automatização" do *bash shell* é temporáriamente "quebrada". Eu até que consegui encontrar um jeito de automatizar tudo, mas não seria o tipo de automatização que eu pretendo.
+
+Por exemplo, eu poderia *pré-configurar* o idioma para pt_BR. Mas e se você preferir pt_PT ou qualquer outro idioma?
+
+Por isso mesmo, eu decidi de "quebrar" a automatização do *bash shell* em algumas coisas. Dessa forma você é livre de personalizar a seu gosto pessoal.
 
 #TODO: Continuar a explicação com imagens ilustrativas do processo de criação da imagem ISO
 <!--
