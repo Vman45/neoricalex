@@ -54,7 +54,7 @@ Os módulos abaixo são meus planos. Não estão necessáriamente em ordem:
 
 O objectivo final é tudo ser feito com apenas um único comando, mas claro ainda não estamos lá.
 
-Para já, estou partindo da premissa de que você já clonou o neoricalex, e já mandou executar o bash shell. Caso ainda não tenha feito, agora é o momento:
+Para já, estou partindo da premissa de que você já clonou o neoricalex, e já mandou executar o *bash shell*. Caso ainda não tenha feito, agora é o momento:
 ```bash
 # Instalar o git
 sudo apt install git -y
@@ -70,6 +70,11 @@ bash shell
 ```
 
 #TODO: Explicação com imagens ilustrativas do processo de criação da imagem ISO
+<!--
+    Lembretes Markdown: https://guides.github.com/features/mastering-markdown/#examples
+    ![Imagem](https://github.com/neoricalex/neoricalex/blob/master/coped/docs/dev/img/consola.PNG)
+-->
+
 
 ### Finalizado
 

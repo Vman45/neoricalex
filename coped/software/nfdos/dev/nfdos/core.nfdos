@@ -24,6 +24,9 @@ apt install -y  --no-install-recommends \
     ubuntu-gnome-desktop \
     ubuntu-gnome-wallpapers
 
+echo -e "$cor_amarela # TODO: Remover Apps Favoritos $fim_cor"
+# REF: https://unix.stackexchange.com/questions/313338/gnome3-how-do-i-remove-favorites-from-dash-via-terminal
+
 #echo -e "$inicio_cor Checkar o Visual Studio Code está instalado $fim_cor"
 #if [ ! -x "$(command -v code)" ]; then
 #    echo -e "$inicio_cor Instalando o Visual Studio Code $fim_cor"
