@@ -81,7 +81,7 @@ cd neoricalex/coped/software/nfdos
 # Criar a imagem ISO do NFDOS Server
 bash shell
 ```
-Para mais informações leia o [README do NFDOS](https://github.com/neoricalex/neoricalex/tree/master/coped/software/nfdos).
+Para mais informações e ajuda leia o [README do NFDOS](https://github.com/neoricalex/neoricalex/tree/master/coped/software/nfdos).
 
 ### Ambiente de homologação
 
