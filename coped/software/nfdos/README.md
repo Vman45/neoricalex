@@ -69,8 +69,15 @@ cd neoricalex/coped/software/nfdos
 # Criar a imagem ISO do NFDOS Server
 bash shell
 ```
+Quando o *bash shell* é executado, ele inicia checkando pelas ferramentas que são necessárias para a criação da ISO. Pacotes como o *binutils, debootstrap, squashfs-tools, xorriso*, etc são requerimentos obrigatórios. Então o *bash shell* começa por instalar eles, se não tiverem já instalados.
 
-#TODO: Explicação com imagens ilustrativas do processo de criação da imagem ISO
+Passando essa primeira etapa, o *bash shell* continua criando uma *imagem de disco virtual*, formatando e a deixando pronta para que as restantes etapas.
+
+Depois de ter criado o disco virtual, o *bash shell* continua criando o *ROOT FS* mandando executar o *debootstrap* do debian.
+
+Com o *ROOT FS* criado, o *bash shell* continua fazendo todos os *bind's* necessários e entra dentro do *CHROOT*.
+
+#TODO: Continuar a explicação com imagens ilustrativas do processo de criação da imagem ISO
 <!--
     Lembretes Markdown: https://guides.github.com/features/mastering-markdown/#examples
     ![Imagem](https://github.com/neoricalex/neoricalex/blob/master/coped/docs/dev/img/consola.PNG)
