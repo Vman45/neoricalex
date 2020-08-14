@@ -38,17 +38,18 @@ Para chegarmos lá, existe ainda um caminho a percorrer. Veja abaixo o ROADMAP p
 
 Os módulos abaixo são meus planos. Não estão necessáriamente em ordem:
 
-* Criar a imagem ISO NFDOS Cliente (**Em curso...**)
-* Criar uma imagem LXD (**Em curso...**)
-* Criar uma imagem Docker (**Em curso...**)
-* Criar um container com Wordpress para amostragem de exemplo e/ou Marketing (**Em curso...**)
-* Criar um CMS (Falta fazer)
-* Criar um LMS (Falta fazer)
-* Criar um Blog (Falta Fazer)
-* Criar um e-Commerce com Marketplace incluído (Falta fazer)
-* Criar um Sistema de Compra e Venda de Ações, Commodities, Forex, Etc (Falta Fazer)
-* Criar uma IA/Rede Neural para o Sistema de Compra e Venda de Ações, Commodities, Forex, Etc (Falta Fazer)
-* Criar a Documentação (O código já é auto explicativo mas falta fazer)
+- [x] Criar a imagem ISO NFDOS Server
+- [ ] Criar a imagem ISO NFDOS Cliente (**Em curso...**)
+- [ ] Criar uma imagem LXC (**Em curso...**)
+- [ ] Criar uma imagem Docker (**Em curso...**)
+- [ ] Criar um container com Wordpress para amostragem de exemplo e/ou Marketing (**Em curso...**)
+- [ ] Criar um CMS
+- [ ] Criar um LMS
+- [ ] Criar um Blog
+- [ ] Criar um e-Commerce com Marketplace incluído
+- [ ] Criar um Sistema de Compra e Venda de Ações, Commodities, Forex, Etc
+- [ ] Criar uma IA/Rede Neural para o Sistema de Compra e Venda de Ações, Commodities, Forex, Etc
+- [ ] Criar a Documentação (O código já é auto explicativo mas falta fazer)
 
 ## Como começar
 
@@ -75,12 +76,6 @@ bash shell
     ![Imagem](https://github.com/neoricalex/neoricalex/blob/master/coped/docs/dev/img/consola.PNG)
 -->
 
-
-### Finalizado
-
-Os módulos abaixo estão finalizados, ou seja, funcionam como pretendido. Claro que estou melhorando/desenvolvendo, consoante o tempo e as possibilidades permitem.
-
-* Criar a imagem ISO NFDOS Server
 
 ### Ajuda
 
