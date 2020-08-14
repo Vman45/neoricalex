@@ -20,7 +20,7 @@ O NFDOS foi pensado para servir de aprendizado, uma vez que o NFDOS está a ser 
 Por outras palavras, o NFDOS não é uma ferramenta para fazer coisas por você. O NFDOS é uma ferramenta do tipo DIY - Do It Yourself - para você aprender a fazer você mesmo. Você lê o código, vê como se faz, e reproduz da forma que você bem quiser e entender.
 
 ## Introdução
-Como falei no README do NEORICALEX eu optei por criar um Sistema Operativo do Zero. 
+Como falei no [README do NEORICALEX](https://github.com/neoricalex/neoricalex/blob/master/README.md) eu optei por criar um Sistema Operativo do Zero. 
 
 Dessa forma a imagem ISO estará pronta com tudo o que é necessário para que o [NEORICALEX](https://neoricalex.com.br) funcione, sem que para isso eu tenha de instalar software, atualizar, e/ou fazer lá seja aquilo que fôr. 
 
