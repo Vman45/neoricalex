@@ -1,9 +1,6 @@
 site_name: NEORICALEX
 nav:
     - Home: 'index.md'
-    - 'User Guide':
-        - 'Writing your docs': 'writing-your-docs.md'
-        - 'Styling your docs': 'styling-your-docs.md'
     - 'COPED':
         - 'README': 'coped/README.md'
     - Sobre:
