@@ -1,5 +1,13 @@
 # NEORICALEX
 
+## Apresentação
+
+O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma e/ou Ambiente de Trabalho. O local onde eu condenso tudo o que eu sei fazer em TI.
+
+A ideia de criação do NEORICALEX surgiu de uma necessidade minha pessoal quando, em Fevereiro 2020 eu fiquei desempregado com a pandemia do COVID19. Foi preciso encontrar uma forma de pagar as contas ao final do mês, e, decidi de monetizar meu conhecimento trabalhando em meu próprio projeto pessoal.
+
+A ideia principal é criar um sistema operacional, e basear uma infra-estrutura em cima dele.
+
 ## Inicio Rápido
 
 ```bash
@@ -21,14 +29,6 @@ neoricalex/nfdos/desktop/0.1/nfdos.iso
 ```
 
 Após a imagem ISO ser gerada, instale normalmente em qualquer Máquina Virtual e/ou Computador Físico.
-
-## Apresentação
-
-O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma e/ou Ambiente de Trabalho. O local onde eu condenso tudo o que eu sei fazer em TI.
-
-A ideia de criação do NEORICALEX surgiu de uma necessidade minha pessoal quando, em Fevereiro 2020 eu fiquei desempregado com a pandemia do COVID19. Foi preciso encontrar uma forma de pagar as contas ao final do mês, e, decidi de monetizar meu conhecimento trabalhando em meu próprio projeto pessoal.
-
-A ideia principal é criar um sistema operacional, e basear uma infra-estrutura em cima dele.
 
 ## Ambiente de Desenvolvimento (NFDOS Desktop)
 
