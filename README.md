@@ -27,29 +27,20 @@ Aqui neste ponto existem várias opções:
 
 Eu optei pela terceira opção. Criar um sistema operativo a que dei o nome de NFDOS.
 
+O NFDOS é, em uma frase, uma versão customizada da Distribuição Linux/Ubuntu 20.04.
+
+Eu optei por criar uma versão custumizada do Ubuntu, porque meu público-alvo são pessoas que nunca usaram Linux, e/ou, que sentem muita dificuldade para trocarem o Windows pelo Linux.
+
+Eu não quero perder clientes porque é necessário abrir o terminal e digitar "sudo apt install", ao invés do popular "seguinte até morrer" do Windows. Então, é bem mais fácil já fornecer uma distribuição com tudo o que é necessário instalado, e depois o cliente apenas precisa de usar.
+
+O NFDOS possui, como o Ubuntu, duas variantes:
+
+* NFDOS Desktop
+* NFDOS Server
+
+O NFDOS Desktop será usado para desenvolver, e, o Server para testar no Ambiente de Homologação, e depois fazer o Deploy no Ambiente de Produção.
+
 # TODO: Continuar a documentação ...
-
-# Py
-sudo apt install python3-pip -y
-sudo pip3 install virtualenv 
-virtualenv env
-source env/bin/activate
-
-# MK Docs
-pip install mkdocs
-mkdocs new .
-
-# KVM
-egrep -c '(vmx|svm)' /proc/cpuinfo
-sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils -y
-sudo adduser $USER libvirt
-sudo adduser $USER kvm
-sudo apt install virt-manager -y
-
-# SystemBack - GUI para criar ISO
-sudo apt install systemback -y
-
-
 
 ### Ambiente de homologação
 
