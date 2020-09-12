@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "# INFO: Configurando as cores no servidor.nfdos..."
+inicio_cor="\033[0;32m"
+cor_amarela="\033[0;93m"
+fim_cor="\033[0m"
+
+echo -e "$cor_amarela # UPDATES OK! $fim_cor"
