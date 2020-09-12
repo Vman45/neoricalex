@@ -1,0 +1,4 @@
+site_name: NEORICALEX
+nav:
+    - README: README.md
+theme: readthedocs
