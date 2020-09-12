@@ -62,6 +62,10 @@ O NFDOS possui, como o Ubuntu, duas variantes:
 
 O NFDOS Desktop será usado para desenvolver o projeto e, o Server, para testar no Ambiente de Homologação, para depois fazer o Deploy no Ambiente de Produção.
 
+## Documentação
+
+A documentação está [acessível aqui](https://neoricalex.readthedocs.io).
+
 ## Financiamento
 
 Gostou do projeto, e está afim de ajudar seu desenvolvimento financeiramente?
