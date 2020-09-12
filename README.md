@@ -15,6 +15,12 @@ cd neoricalex/nfdos
 # Criar a imagem ISO do NFDOS DESKTOP
 bash shell
 ```
+Aguarde que todo o processo seja finalizado. Ao final do processo uma imagem ISO será gerada em:
+```bash
+neoricalex/nfdos/desktop/0.1/nfdos.iso
+```
+
+Após a imagem ISO ser gerada, instale normalmente em qualquer Máquina Virtual e/ou Computador Físico.
 
 ## Apresentação
 
