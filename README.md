@@ -16,7 +16,7 @@ O ambiente de desenvolvimento é o ambiente que você utiliza para construir o p
 
 Você de seu lado poderá usar o sistema e/ou distribuição que você quiser. No entanto todos os automatismos, bibliotecas, pacotes, etc, eu usei como base de trabalho uma Distribuição Linux chamada NFDOS.
 
-Para mais informações e ajuda leia a [Documentação](https://github.com/neoricalex/neoricalex/tree/master/docs).
+Para mais informações e ajuda leia a [Documentação](https://neoricalex.readthedocs.io/pt/latest/).
 
 ### Ambiente de homologação
 
