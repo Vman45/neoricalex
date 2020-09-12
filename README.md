@@ -1,5 +1,21 @@
 # NEORICALEX
 
+## Inicio Rápido
+
+```bash
+# Instalar o Git
+sudo apt install git -y
+
+# Clonar o NEORICALEX
+git clone https://github.com/neoricalex/neoricalex.git
+
+# Entrar na pasta neoricalex/nfdos
+cd neoricalex/nfdos
+
+# Criar a imagem ISO do NFDOS DESKTOP
+bash shell
+```
+
 ## Apresentação
 
 O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma e/ou Ambiente de Trabalho. O local onde eu condenso tudo o que eu sei fazer em TI.
@@ -38,9 +54,7 @@ O NFDOS possui, como o Ubuntu, duas variantes:
 * NFDOS Desktop
 * NFDOS Server
 
-O NFDOS Desktop será usado para desenvolver, e, o Server para testar no Ambiente de Homologação, e depois fazer o Deploy no Ambiente de Produção.
-
-# TODO: Continuar a documentação ...
+O NFDOS Desktop será usado para desenvolver, e, o Server, para testar no Ambiente de Homologação, para depois fazer o Deploy no Ambiente de Produção.
 
 ### Ambiente de homologação
 
