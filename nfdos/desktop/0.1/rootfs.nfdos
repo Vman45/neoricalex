@@ -90,6 +90,22 @@ apt install -y \
 echo -e "$inicio_cor Configurar o idioma $fim_cor"
 dpkg-reconfigure locales
 
+echo -e "$inicio_cor Instalando pacotes adicionais para o Live CD $fim_cor"
+apt install -y \
+    ubiquity \
+    ubiquity-casper \
+    ubiquity-frontend-gtk \
+    ubiquity-slideshow-ubuntu \
+    ubiquity-ubuntu-artwork
+
+apt install -y \
+    plymouth-theme-ubuntu-logo
+
+echo -e "$inicio_cor Instalando os pacotes minimos do Gnome Desktop $fim_cor"
+apt install -y  --no-install-recommends \
+    ubuntu-gnome-desktop \
+    ubuntu-gnome-wallpapers
+
 echo -e "$inicio_cor Configurar o NEORICALEX $fim_cor"
 export NEORICALEX=/home/$usuario/Público
 
