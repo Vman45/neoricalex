@@ -13,14 +13,4 @@ source env/bin/activate
 pip install mkdocs
 mkdocs new .
 
-# KVM
-egrep -c '(vmx|svm)' /proc/cpuinfo
-sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils -y
-sudo adduser $USER libvirt
-sudo adduser $USER kvm
-sudo apt install virt-manager -y
-
-# SystemBack - GUI para criar ISO
-sudo apt install systemback -y
-
 

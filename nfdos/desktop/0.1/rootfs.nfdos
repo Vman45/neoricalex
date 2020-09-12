@@ -107,7 +107,7 @@ apt install -y  --no-install-recommends \
     ubuntu-gnome-wallpapers
 
 echo -e "$inicio_cor Configurar o NEORICALEX $fim_cor"
-export NEORICALEX=/home/$usuario/Público
+export NEORICALEX=/etc/neoricalex
 
 echo -e "$inicio_cor Checkando se a $NEORICALEX existe $fim_cor "
 if [ ! -d "$NEORICALEX" ]; then
@@ -118,14 +118,8 @@ else
     git pull
 fi
 
-echo -e "$inicio_cor Acertando as permissões na pasta $NEORICALEX ... $fim_cor "
-chown -R $usuario:$usuario $NEORICALEX
-
 echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/core.nfdos $fim_cor"
-bash $NEORICALEX/nfdos/desktop/0.1/core.nfdos 
-
-echo -e "$inicio_cor Executando o $NEORICALEX/dev/nfdos/updates.nfdos $fim_cor"
-bash $NEORICALEXd/nfdos/desktop/0.1/updates.nfdos 
+bash $NEORICALEX/nfdos/desktop/0.1/core.nfdos  
 
 echo -e "$inicio_cor Removendo pacotes desnecessários $fim_cor"
 apt autoremove -y
