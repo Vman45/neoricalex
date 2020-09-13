@@ -1,6 +1,8 @@
 site_name: NEORICALEX
 nav:
     - Home: 'index.md'
+    - NFDOS:
+        - 'Criar a Imagem ISO': 'nfdos/criar_imagem_iso.md'
     - 'COPED':
         - 'README': 'coped/README.md'
     - Sobre:
