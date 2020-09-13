@@ -101,10 +101,14 @@ apt install -y \
 apt install -y \
     plymouth-theme-ubuntu-logo
 
-echo -e "$inicio_cor Instalando os pacotes minimos do Gnome Desktop $fim_cor"
-apt install -y  --no-install-recommends \
-    ubuntu-gnome-desktop \
-    ubuntu-gnome-wallpapers
+echo -e "$inicio_cor Instalando os pacotes minimos do Desktop Mate $fim_cor"
+apt install tasksel -y
+tasksel install ubuntu-mate-core -y
+
+#echo -e "$inicio_cor Instalando os pacotes minimos do Gnome Desktop $fim_cor"
+#apt install -y  --no-install-recommends \
+#    ubuntu-gnome-desktop \
+#    ubuntu-gnome-wallpapers
 
 echo -e "$inicio_cor Configurar o NEORICALEX $fim_cor"
 export NEORICALEX=/etc/neoricalex

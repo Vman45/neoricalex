@@ -1,0 +1,11 @@
+# Py
+sudo apt install python3-pip -y
+sudo pip3 install virtualenv 
+virtualenv env
+source env/bin/activate
+
+# MK Docs
+pip install mkdocs
+mkdocs new .
+
+

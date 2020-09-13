@@ -5,13 +5,8 @@ inicio_cor="\033[0;32m"
 cor_amarela="\033[0;93m"
 fim_cor="\033[0m"
 
-echo -e "$cor_amarela # TODO: Checkar se o Chrome está instalado $fim_cor"
-echo -e "$inicio_cor Instalando o Google Chrome... $fim_cor"
-echo -e "$cor_amarela # TODO: Adicionar uma Key Pública do Chrome $fim_cor"
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
-apt update
-apt install -y google-chrome-stable
+echo -e "$inicio_cor Instalando o Navegador Web Chromium... $fim_cor"
+apt install -y chromium-browser
 
 echo -e "$inicio_cor Checkar o Visual Studio Code está instalado $fim_cor"
 if [ ! -x "$(command -v code)" ]; then
@@ -25,14 +20,18 @@ if [ ! -x "$(command -v code)" ]; then
 fi
 
 # KVM
-#egrep -c '(vmx|svm)' /proc/cpuinfo
+#egrep -c '(vmx|svm)' /proc/cpuv
 #sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils -y
 #sudo adduser $USER libvirt
 #sudo adduser $USER kvm
 #sudo apt install virt-manager -y
+# chown root:kvm /dev/kvm
 
 # SystemBack - GUI para criar ISO
 #sudo apt install systemback -y
+
+# TMUX
+#sudo apt install tmux -y
 
 echo -e "$cor_amarela # TODO: Remover Apps Favoritos $fim_cor"
 # REF: https://unix.stackexchange.com/questions/313338/gnome3-how-do-i-remove-favorites-from-dash-via-terminal
