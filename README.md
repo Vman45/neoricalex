@@ -6,14 +6,17 @@ O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma e/ou Ambiente de
 
 A ideia de criação do NEORICALEX surgiu de uma necessidade minha pessoal quando, em Fevereiro 2020 eu fiquei desempregado com a pandemia do COVID19. Foi preciso encontrar uma forma de pagar as contas ao final do mês, e, decidi de monetizar meu conhecimento trabalhando em meu próprio projeto pessoal.
 
-A ideia principal é criar um sistema operacional, e basear uma infra-estrutura em cima dele. 
+A minha ideia principal para o projeto é criar um sistema operacional, e basear uma infra-estrutura em cima dele. 
 
 Ou seja, por outras palavras, o NEORICALEX pode ser visto como:
 
 * Uma ferramenta para criar uma Distribuição Linux do Zero baseada no Ubuntu.
+* Dentro da Distribuição incluir:
     * Um Cluster LXC/LXD
     * Um Cluster Docker
-    * E muito mais. Leia o [README do NFDOS](./nfdos/README.md) para saber qual é o ROADMAP.
+    * E muito mais...
+    
+Leia o [README do NFDOS](./nfdos/README.md) para saber qual é o ROADMAP.
 
 ## Início Rápido
 
@@ -32,10 +35,10 @@ bash shell
 ```
 Aguarde que todo o processo seja finalizado. Ao final do processo uma imagem ISO será gerada em:
 ```bash
-neoricalex/nfdos/desktop/0.2/nfdos.iso
+neoricalex/nfdos/desktop/0.3/nfdos.iso
 ```
 
-Após a imagem ISO ser gerada, use e/ou instale normalmente em qualquer Máquina Virtual e/ou Computador Físico.
+Após a imagem ISO ser gerada, use e/ou instale normalmente em qualquer Máquina Virtual (VPS) e/ou Computador Físico (Bare Metal).
 
 ## Documentação
 
