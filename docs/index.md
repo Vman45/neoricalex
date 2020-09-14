@@ -1,3 +1,5 @@
+Em desenvolvimento ...
+
 # Apresentação
 
 O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma e/ou Ambiente de Trabalho. O local onde eu condenso tudo o que eu sei fazer em TI.
