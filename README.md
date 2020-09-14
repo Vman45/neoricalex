@@ -36,8 +36,8 @@ A documentação está [acessível aqui](https://neoricalex.readthedocs.io).
 
 ## Notas de Versão
 
-* Versão 0.2 - Agora podemos instalar o sistema no disco.
-* Versão 0.1 - Compilação da ISO do Live CD completamente zerada, sem mesmo um terminal. Apenas tem internet e as configurações do gtk desktop. Dá para usar, mas não dá para instalar no disco para termos persistência, e não precisarmos da imagem ISO.
+* Versão 0.2 - Agora podemos instalar o sistema no disco. Além disso a GUI está completamente zerada, nem mesmo um terminal tem. Apenas tem internet e as configurações do Gnome.
+* Versão 0.1 - Compilação da ISO do Live CD. Dá para usar, mas não dá para instalar no disco para termos persistência, e não precisarmos da imagem ISO.
 
 ## Financiamento
 

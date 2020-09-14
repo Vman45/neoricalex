@@ -46,7 +46,7 @@ dpkg-divert --local --rename --add /sbin/initctl
 ln -s /bin/true /sbin/initctl
 
 echo -e "$inicio_cor Instalando pacotes para o Live CD $fim_cor"
-apt install --no-install-recommends -y \
+apt install -y \
     localepurge \
     ubuntu-minimal \
     linux-generic \
