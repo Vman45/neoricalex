@@ -41,17 +41,17 @@ Após a imagem ISO ser gerada, use e/ou instale normalmente em qualquer Máquina
 
 A documentação está [acessível aqui](https://neoricalex.readthedocs.io).
 
-## Notas de Versão
-
-* **Versão 0.2** - Agora podemos instalar o sistema no disco. Além disso a GUI está completamente zerada, nem mesmo um terminal tem. Apenas tem internet e as configurações do Gnome.
-* **Versão 0.1** - Compilação da ISO do Live CD. Dá para usar, mas não dá para instalar no disco para termos persistência, e não precisarmos da imagem ISO.
-
 ## Financiamento
 
 Gostou do projeto, e está afim de ajudar seu desenvolvimento financeiramente?
 Ajude via [Paypal](https://www.paypal.me/AleexFL).
 
 Obrigado desde já pelo "café" :-)
+
+## Notas de Versão
+
+* **Versão 0.2** - Agora podemos instalar o sistema no disco. Além disso a GUI está completamente zerada, nem mesmo um terminal tem. Apenas tem internet e as configurações do Gnome.
+* **Versão 0.1** - Compilação da ISO do Live CD. Dá para usar, mas não dá para instalar no disco para termos persistência, e não precisarmos da imagem ISO.
 
 ## Licença
 
