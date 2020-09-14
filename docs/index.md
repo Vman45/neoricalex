@@ -10,6 +10,13 @@ A ideia de criação do NEORICALEX surgiu de uma necessidade minha pessoal quand
 
 A ideia principal é criar um sistema operacional, e basear uma infra-estrutura em cima dele.
 
+Ou seja, por outras palavras, o NEORICALEX pode ser visto como:
+
+* Uma ferramenta para criar uma Distribuição Linux baseada no Ubuntu do zero, incluindo:
+    * Um Cluster LXC/LXD
+    * Um Cluster Docker
+    * [E muito mais ...](./nfdos/README.md).
+
 O Sistema Operacional se chama **NFDOS** e, a infra-estrutura está dividida em 3(três) ambientes:
 
 * Ambiente de Desenvolvimento

@@ -62,6 +62,7 @@ echo -e "$cor_amarela # TODO: Criar uma Pool ZFS $fim_cor"
 #zpool create -f -m $NEORICALEX/dev/nfdos/pool npool mirror /dev/sda /dev/sdb
 
 echo -e "$cor_amarela # TODO: Criar um contentor LXD/LXC $fim_cor"
+# TODO: Preparar Docker: https://linuxcontainers.org/lxd/docs/master/#support-and-discussions
 # TODO: Depois da Pool:
 #           Iniciar o LXD:
 #           Criar um contentor LXC:

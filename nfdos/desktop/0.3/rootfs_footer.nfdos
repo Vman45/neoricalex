@@ -1,3 +1,7 @@
+echo -e "$inicio_cor Removendo pacotes desnecessários $fim_cor"
+apt autoremove -y
+apt autoclean -y
+
 echo -e "$inicio_cor Finalizando o divert $fim_cor"
 truncate -s 0 /etc/machine-id
 rm /sbin/initctl

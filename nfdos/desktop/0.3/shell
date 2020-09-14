@@ -1,7 +1,7 @@
 # Atualizar variáveis
 # TODO: Refatorar as variáveis para não haver redundancia
 export NEORICALEX_ROOT=$(pwd)
-export NFDOS_ROOT=$NEORICALEX_ROOT/desktop/0.2
+export NFDOS_ROOT=$NEORICALEX_ROOT/desktop/0.3
 export NFDOS_ROOTFS=$NFDOS_ROOT/rootfs
 export NFDOS_DISCO=$NFDOS_ROOT/nfdos.img
 export NFDOS_DEV=$NEORICALEX_ROOT/testes/nfdos
@@ -62,6 +62,10 @@ sudo chroot $NFDOS_ROOTFS /bin/bash
 
 echo "Entrar no $NFDOS_ROOTFS e executar o rootfs_footer.nfdos"
 sudo chroot $NFDOS_ROOTFS /bin/bash rootfs_footer.nfdos
+
+echo "Remover o rootfs_*.nfdos do $NFDOS_ROOTFS"
+sudo rm -rf $NFDOS_ROOTFS/rootfs_head.nfdos
+sudo rm -rf $NFDOS_ROOTFS/rootfs_footer.nfdos
 
 echo "OK. Neste ponto a nossa imagem de disco (nfdos.img) está criada."
 echo "Agora vamos criar uma imagem de CD/DVD para que possamos rodar ela em qualquer Computador/VPS/VM/Etc"

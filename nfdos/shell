@@ -32,7 +32,7 @@ echo "Setar algumas variáveis de ambiente para nos facilitar a vida..."
 export NEORICALEX=$(pwd)
 export NEORICALEX_DEV=$NEORICALEX/desktop
 export NEORICALEX_DEV_BACKEND=$NEORICALEX_DEV/backend
-export NFDOS_ROOT=$NEORICALEX_DEV/0.2
+export NFDOS_ROOT=$NEORICALEX_DEV/0.3
 export NFDOS_ROOTFS=$NFDOS_ROOT/rootfs
 export NFDOS_DISCO=$NFDOS_ROOT/nfdos.img
 
@@ -59,15 +59,16 @@ testar_nfdos() {
     bash $NFDOS_ROOT/shell  
 
     echo "Limpeza final..."
-    sudo rm -rf $NFDOS_ROOT/rootfs
+    #sudo rm -rf $NFDOS_ROOT/rootfs
     sudo rm -rf $NFDOS_ROOT/image
-    sudo rm -rf $NFDOS_ROOT/nfdos.img
+    #sudo rm -rf $NFDOS_ROOT/nfdos.img
 }
 time testar_nfdos
 
 echo ""
-echo "Por agora é tudo."
-echo "Divirta-se !"
 
-#echo "Iniciando o QEMU..."
-#qemu-system-x86_64 -m 1024  -cdrom $NFDOS_ROOT/nfdos.iso
+echo "Iniciando o NFDOS... Divirta-se!"
+VBoxManage startvm "NFDOS"
+
+sudo rm -rf $NFDOS_ROOT/nfdos.iso
+echo "Obrigado por usar o NEORICALEX/NFDOS. Até já :-)"

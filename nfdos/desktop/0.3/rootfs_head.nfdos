@@ -45,15 +45,26 @@ ln -fs /etc/machine-id /var/lib/dbus/machine-id
 dpkg-divert --local --rename --add /sbin/initctl
 ln -s /bin/true /sbin/initctl
 
-echo -e "$inicio_cor Instalando pacotes para o Live CD $fim_cor"
+echo -e "$inicio_cor Instalando os pacotes base $fim_cor"
 apt install -y \
-    localepurge \
     ubuntu-minimal \
-    linux-generic \
     casper \
     lupin-casper \
-    os-prober \
     discover \
+    laptop-detect \
+    os-prober \
+    network-manager \
+    resolvconf \
+    net-tools \
+    wireless-tools \
+    wpagui \
+    locales \
+    dosfstools \
+    ssl-cert \
+    linux-generic
+
+echo -e "$inicio_cor Instalando pacotes adicionais para o Live CD $fim_cor"
+apt install -y \
     ubiquity \
     ubiquity-casper \
     ubiquity-frontend-gtk \
@@ -62,14 +73,21 @@ apt install -y \
     ubiquity-frontend-gtk-panel \
     ubiquity-ubuntu-artwork \
     plymouth-theme-ubuntu-logo
-    dosfstools \
-    resolvconf \
-    net-tools \
-    wireless-tools \
-    wpagui \
-    ssl-cert
 
-#apt install -y oem-config oem-config-gtk oem-config-slideshow-ubuntu oem-config-remaster
+echo -e "$inicio_cor Instalando pacotes úteis ... $fim_cor"
+apt install -y \
+    terminator \
+    nautilus \
+    snapd \
+    apt-transport-https \
+    curl \
+    less \
+    git \
+    tmux
+
+echo -e "$inicio_cor Instalando snaps úteis ... $fim_cor"
+snap install lxd
+snap install snap-store
 
 echo -e "$inicio_cor Configurando a rede $fim_cor"
 dpkg-reconfigure resolvconf
@@ -85,6 +103,21 @@ EOF
 
 dpkg-reconfigure network-manager
 
-echo -e "$inicio_cor Removendo pacotes desnecessários $fim_cor"
-apt autoremove -y
-apt autoclean -y
+echo -e "$inicio_cor Instalar o Visual Studio Code $fim_cor"
+if [ ! -x "$(command -v code)" ]; then
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+    rm microsoft.gpg
+    apt update
+    apt install -y code
+fi
+
+echo -e "$cor_amarela # TODO: Criar um contentor LXD/LXC $fim_cor"
+# TODO: Preparar Docker: https://linuxcontainers.org/lxd/docs/master/#support-and-discussions
+
+echo -e "$cor_amarela # TODO: Adicionar o Template da GRUB $fim_cor"
+# REF: http://ubuntuhandbook.org/index.php/2017/06/vimix-grub2-theme-makes-ubuntu-boot-loader-look-prettier/
+
+echo -e "$cor_amarela # TODO: Adicionar o Template do Boot Splash Screen $fim_cor"
+# REF: https://linuxcool.ru/en/how-to-install-plymouth-system-boot-theme-on-ubuntu-20-04/
