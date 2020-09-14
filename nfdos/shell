@@ -3,7 +3,7 @@ echo "Eu sou o Ricardo Lourenço (Neo), Desenvolvedor e Maintainer do NEORICALEX
 echo "Desde já o meu muito obrigado por testar tanto o NEORICALEX, quanto indiretamente o meu \"filhinho\" chamado NFDOS :-)"
 echo "Vou começar por checkar qual é a distribuição Linux que o $HOSTNAME está executando."
 echo "Aguarde 10 segundinhos por favor ..."
-sleep 10
+sleep 7
 # REF: https://stackoverflow.com/questions/29581754/how-to-find-linux-distribution-name-using-shell-script
 UNAME=$(uname | tr "[:upper:]" "[:lower:]")
 if [ "$UNAME" == "linux" ]; then
@@ -32,12 +32,9 @@ echo "Setar algumas variáveis de ambiente para nos facilitar a vida..."
 export NEORICALEX=$(pwd)
 export NEORICALEX_DEV=$NEORICALEX/desktop
 export NEORICALEX_DEV_BACKEND=$NEORICALEX_DEV/backend
-
 export NFDOS_ROOT=$NEORICALEX_DEV/0.2
 export NFDOS_ROOTFS=$NFDOS_ROOT/rootfs
 export NFDOS_DISCO=$NFDOS_ROOT/nfdos.img
-
-export NFDOS_DEV=$NFDOS_ROOT/testes/nfdos
 
 echo "Criar a imagem de disco ... "
 testar_nfdos() {
@@ -63,16 +60,14 @@ testar_nfdos() {
 }
 time testar_nfdos
 
-#bash dev/backend/shell
-
-echo ""
-echo "Por agora é tudo."
-echo "Obrigado e até já !"
-
-#echo "Iniciando o QEMU..."
-#qemu-system-x86_64 -m 1024  -cdrom $NFDOS_ROOT/nfdos.iso
-
+echo "Limpeza final..."
 sudo rm -rf $NFDOS_ROOT/rootfs
 sudo rm -rf $NFDOS_ROOT/image
 sudo rm -rf $NFDOS_ROOT/nfdos.img
 
+echo ""
+echo "Por agora é tudo."
+echo "Divirta-se !"
+
+#echo "Iniciando o QEMU..."
+#qemu-system-x86_64 -m 1024  -cdrom $NFDOS_ROOT/nfdos.iso

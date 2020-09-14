@@ -1,6 +1,6 @@
-# Criar imagem de disco (nfdos.img)
+# Atualizar variáveis
+# TODO: Refatorar as variáveis para não haver redundancia
 export NEORICALEX_ROOT=$(pwd)
-
 export NFDOS_ROOT=$NEORICALEX_ROOT/desktop/0.2
 export NFDOS_ROOTFS=$NFDOS_ROOT/rootfs
 export NFDOS_DISCO=$NFDOS_ROOT/nfdos.img

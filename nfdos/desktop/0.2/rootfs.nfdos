@@ -94,7 +94,7 @@ rm /sbin/initctl
 dpkg-divert --rename --remove /sbin/initctl
 
 echo -e "$inicio_cor Limpando eventuais resquícios da instalação/configuração $fim_cor"
-apt-get clean
+apt-get clean -y
 rm -rf /tmp/* ~/.bash_history
 
 echo -e "$inicio_cor Desmontando o /proc /sys e /dev/pts $fim_cor"

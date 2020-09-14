@@ -86,18 +86,3 @@ neoricalex/nfdos/desktop/0.1/nfdos.iso
 
 Após a imagem ISO ser gerada, instale normalmente em qualquer Máquina Virtual e/ou Computador Físico.
 
-
-## Documentação
-
-A documentação está [acessível aqui](https://neoricalex.readthedocs.io).
-
-## Financiamento
-
-Gostou do projeto, e está afim de ajudar seu desenvolvimento financeiramente?
-Ajude via [Paypal](https://www.paypal.me/AleexFL).
-
-Obrigado desde já pelo "café" :-)
-
-## Licença
-
-[LICENÇA PÚBLICA GERAL GNU (Versão 2, junho de 1991)](./LICENSE)

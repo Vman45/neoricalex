@@ -33,7 +33,7 @@ set default="0"
 set timeout=5
 
 
-menuentry "Arrancar o NFDOS sem instalar" {
+menuentry "Arrancar o NFDOS" {
    linux /casper/vmlinuz boot=casper quiet splash ---
    initrd /casper/initrd
 }
