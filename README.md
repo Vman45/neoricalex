@@ -8,7 +8,7 @@ A ideia de criação do NEORICALEX surgiu de uma necessidade minha pessoal quand
 
 A ideia principal é criar um sistema operacional, e basear uma infra-estrutura em cima dele.
 
-## Inicio Rápido
+## Início Rápido
 
 ```bash
 # Instalar o Git
@@ -25,10 +25,10 @@ bash shell
 ```
 Aguarde que todo o processo seja finalizado. Ao final do processo uma imagem ISO será gerada em:
 ```bash
-neoricalex/nfdos/desktop/0.1/nfdos.iso
+neoricalex/nfdos/desktop/0.2/nfdos.iso
 ```
 
-Após a imagem ISO ser gerada, instale normalmente em qualquer Máquina Virtual e/ou Computador Físico.
+Após a imagem ISO ser gerada, use e/ou instale normalmente em qualquer Máquina Virtual e/ou Computador Físico.
 
 ## Documentação
 
