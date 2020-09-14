@@ -14,7 +14,7 @@ O Sistema Operacional se chama **NFDOS** e, a infra-estrutura está dividida em 
 * Ambiente de Homologação
 * Ambiente de Produção
 
-## Ambiente de Homologação
+## Ambiente de Desenvolvimento
 
 O ambiente de desenvolvimento é o ambiente que você utiliza para construir o projeto. Esse ambiente pertence a você. Pode ser o seu computador, notebook, ou uma máquina virtual que você utilize para desenvolver o projeto.
 
