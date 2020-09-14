@@ -57,13 +57,13 @@ testar_nfdos() {
     sudo apt autoclean -y
 
     bash $NFDOS_ROOT/shell  
+
+    echo "Limpeza final..."
+    sudo rm -rf $NFDOS_ROOT/rootfs
+    sudo rm -rf $NFDOS_ROOT/image
+    sudo rm -rf $NFDOS_ROOT/nfdos.img
 }
 time testar_nfdos
-
-echo "Limpeza final..."
-sudo rm -rf $NFDOS_ROOT/rootfs
-sudo rm -rf $NFDOS_ROOT/image
-sudo rm -rf $NFDOS_ROOT/nfdos.img
 
 echo ""
 echo "Por agora é tudo."
