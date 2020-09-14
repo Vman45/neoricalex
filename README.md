@@ -6,7 +6,14 @@ O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma e/ou Ambiente de
 
 A ideia de criação do NEORICALEX surgiu de uma necessidade minha pessoal quando, em Fevereiro 2020 eu fiquei desempregado com a pandemia do COVID19. Foi preciso encontrar uma forma de pagar as contas ao final do mês, e, decidi de monetizar meu conhecimento trabalhando em meu próprio projeto pessoal.
 
-A ideia principal é criar um sistema operacional, e basear uma infra-estrutura em cima dele. Ou seja, por outras palavras, o NEORICALEX pode ser visto como uma ferramenta para criar uma Distribuição Linux/Ubuntu do zero.
+A ideia principal é criar um sistema operacional, e basear uma infra-estrutura em cima dele. 
+
+Ou seja, por outras palavras, o NEORICALEX pode ser visto como:
+
+* Uma ferramenta para criar uma Distribuição Linux/Ubuntu do zero.
+* Um Cluster LXC/LXD
+* Um Cluster Docker
+* E muito mais. Leia o [README do NFDOS](./nfdos/README.md) para saber qual é o ROADMAP.
 
 ## Início Rápido
 
