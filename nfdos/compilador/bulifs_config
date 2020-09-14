@@ -1,0 +1,22 @@
+#!/bin/sh
+
+name=bulifs
+template_dir=/usr/share/${name}/template
+info_prefix="[${name}] INFO:"
+
+copy_template() {
+	printf "${info_prefix} Live system configuration files directory ([ENTER] for current): "
+	read dir
+	[ -t 0 ] || printf "\n"
+	dir="${dir:-./}"
+	mkdir -p "${dir}"
+	cd ./"${dir}"
+	sudo cp -nr ${template_dir}/* .
+	#owner=$(stat -c %U .)
+	#group=$(stat -c %G .)
+	sudo chown -R $USER:$USER $(ls ${template_dir})
+	echo "${info_prefix} Created live system configuration files in: ${dir}"
+	echo "${info_prefix} See \"man ${name} build\" for more information on how to configure and build the live system."
+}
+
+copy_template

@@ -1,0 +1,56 @@
+.TH bulifs\ build 1 "November 2019" "1.1.1" "Build Ubuntu Live ISO From Scratch"
+
+.SH NAME
+bulifs build
+
+.SH SYNOPSIS
+\fBbulifs build\fP
+.br
+  [-c|\fB\--clear-cache\fP]
+.br
+  [-s|\fB\--skip-restore-cache\fP]
+.br
+  [-i|\fB\--interactive\fP]
+.br
+  [-o|\fB\--only-build-iso\fP]
+.br
+  [-q|\fB\--quiet\fP]
+.br
+  [-h|\fB\--help\fP]
+
+.SH DESCRIPTION
+Builds the ISO from the live system configuration files.
+
+.SH OPTIONS
+.IP "-c|\fB\--clear-clear-cache\fP" 4
+clears all cache files for a complete rebuild.
+.IP "-s|\fB\--skip-restore-cache\fP" 4
+skip restoring the cache (and skip saving it except on first run) to keep current customizations and to speed up the build. If you want to do cleanups such as removing old kernels or packages you will have to do them manually (e.g. in an interactive shell).
+.IP "-i|\fB\--interactive\fP" 4
+enables interactive customization in a shell during the build.
+.IP "-o|\fB\--only-build-iso\fP" 4
+skip building the live system and only build the ISO.
+.IP "-q|\fB\--quiet\fP" 4
+hides verbose messages.
+.IP "-h|\fB\--help\fP" 4
+shows usage information.
+
+.SH FILES
+.IP \fBsettings.conf\fP 4
+Configuration file for build variables.
+.IP \fBpackages.list\fP 4
+List of packages that will be installed in the live system.
+.IP \fBcustomize_chroot.sh\fP 4
+Script with commands that will be executed in the live system during the build.
+.IP \fBincludes\fP 4
+Overlay directory with files that will be copied to the live system.
+.IP \fBgrub/grub.conf\fP 4
+Configuration file for the GRUB bootloader in the ISO.
+.IP \fBapt\fP 4
+Overlay directory with configuration files for APT (equivalent to /etc/apt).
+
+.SH BUGS
+Report bugs and make feature requests on GitLab: <\fIhttps://gitlab.com/bfeber/bulifs/issues/new\fP>
+
+.SH AUTHOR
+Björn Feber (bfeber@protonmail.com)

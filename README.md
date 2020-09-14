@@ -66,6 +66,11 @@ O NFDOS Desktop será usado para desenvolver o projeto e, o Server, para testar 
 
 A documentação está [acessível aqui](https://neoricalex.readthedocs.io).
 
+## Notas da Versão
+
+* Versão 0.2 - Agora podemos instalar o sistema no disco.
+* Versão 0.1 - Compilação da ISO do Live CD da versão Desktop. Dá para usar, mas não dá para instalar.
+
 ## Financiamento
 
 Gostou do projeto, e está afim de ajudar seu desenvolvimento financeiramente?

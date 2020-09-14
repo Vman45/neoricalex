@@ -33,7 +33,7 @@ export NEORICALEX=$(pwd)
 export NEORICALEX_DEV=$NEORICALEX/desktop
 export NEORICALEX_DEV_BACKEND=$NEORICALEX_DEV/backend
 
-export NFDOS_ROOT=$NEORICALEX_DEV/0.1
+export NFDOS_ROOT=$NEORICALEX_DEV/0.2
 export NFDOS_ROOTFS=$NFDOS_ROOT/rootfs
 export NFDOS_DISCO=$NFDOS_ROOT/nfdos.img
 
@@ -55,7 +55,11 @@ testar_nfdos() {
         grub-efi-amd64-bin \
         mtools
 
-    bash desktop/0.1/shell  
+    echo "Limpar o que não é necessário..."
+    sudo apt autoremove -y
+    sudo apt autoclean -y
+
+    bash $NFDOS_ROOT/shell  
 }
 time testar_nfdos
 
@@ -67,4 +71,8 @@ echo "Obrigado e até já !"
 
 #echo "Iniciando o QEMU..."
 #qemu-system-x86_64 -m 1024  -cdrom $NFDOS_ROOT/nfdos.iso
+
+sudo rm -rf $NFDOS_ROOT/rootfs
+sudo rm -rf $NFDOS_ROOT/image
+sudo rm -rf $NFDOS_ROOT/nfdos.img
 

@@ -1,0 +1,20 @@
+Source: bulifs
+Section: utils
+Priority: optional
+Maintainer: Björn Feber <bfeber@protonmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 4.1.4
+
+Package: bulifs
+Architecture: any
+Depends: ${misc:Depends},
+         debootstrap,
+         grub-efi-amd64-bin,
+         grub-pc-bin,
+         mtools,
+         rsync,
+         squashfs-tools,
+         xorriso
+Description: Build Ubuntu Live ISO From Scratch
+ This is a tool to easily build a custom Ubuntu live ISO from scratch.
+ It uses Debian's live-boot and live-config for the live system.

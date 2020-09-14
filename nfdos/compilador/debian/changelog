@@ -1,0 +1,82 @@
+bulifs (1.1.1) bionic; urgency=medium
+
+  * Update man page version
+
+ -- Björn Feber <bfeber@protonmail.com>  Sat, 03 Nov 2019 10:10:00 +0100
+
+bulifs (1.1) bionic; urgency=medium
+
+  * Cache kernel
+  * More default packages
+  * More cleaning
+  * Fix bash completion in interactive shell
+  * Fix network
+  * Other small fixes
+
+ -- Björn Feber <bfeber@protonmail.com>  Sat, 02 Nov 2019 17:02:00 +0100
+
+bulifs (1.0.1) bionic; urgency=medium
+
+  * Minor corrections
+
+ -- Björn Feber <bfeber@protonmail.com>  Fri, 01 Nov 2019 01:50:00 +0100
+
+bulifs (1.0) bionic; urgency=medium
+
+  * Added caching, cleaner builds by default
+  * More minimal base system
+  * Run much less inside chroot
+  * Improved argument handling
+  * Cleaned code
+  * Other small fixes
+
+ -- Björn Feber <bfeber@protonmail.com>  Fri, 01 Nov 2019 01:30:00 +0100
+
+bulifs (0.5) bionic; urgency=medium
+
+  * Option to skip building the live system and only build the ISO
+  * Fail if script is already running
+  * Cleaned code
+  * Style fixes
+  * Many bug fixes
+
+ -- Björn Feber <bfeber@protonmail.com>  Thu, 24 Oct 2019 18:20:00 +0200
+
+bulifs (0.4) bionic; urgency=medium
+
+  * More help messages
+  * Custom username for the live system by default
+  * Automatic removal of old packages
+  * Style fixes
+  * Other small fixes
+
+ -- Björn Feber <bfeber@protonmail.com>  Wed, 23 Oct 2019 20:48:00 +0200
+
+bulifs (0.3) bionic; urgency=medium
+
+  * Split into config and build script
+  * Add more help and documentation
+
+ -- Björn Feber <bfeber@protonmail.com>  Tue, 22 Oct 2019 19:54:00 +0200
+
+bulifs (0.2) bionic; urgency=medium
+
+  * Added APT and linux kernel customization options
+  * Cleaned code
+  * Many bug fixes
+
+ -- Björn Feber <bfeber@protonmail.com>  Sun, 20 Oct 2019 22:38:00 +0200
+
+bulifs (0.1.1) bionic; urgency=medium
+
+  * Permissions fixes
+  * Style fixes
+  * Other small fixes
+
+ -- Björn Feber <bfeber@protonmail.com>  Sun, 20 Oct 2019 05:18:00 +0200
+
+bulifs (0.1) bionic; urgency=medium
+
+  * Initial release
+
+ -- Björn Feber <bfeber@protonmail.com>  Sat, 19 Oct 2019 18:05:00 +0200
