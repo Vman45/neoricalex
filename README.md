@@ -10,7 +10,7 @@ A ideia principal é criar um sistema operacional, e basear uma infra-estrutura 
 
 Ou seja, por outras palavras, o NEORICALEX pode ser visto como:
 
-* Uma ferramenta para criar uma Distribuição Linux/Ubuntu do zero com:
+* Uma ferramenta para criar uma Distribuição Linux baseada no Ubuntu do zero, incluindo:
     * Um Cluster LXC/LXD
     * Um Cluster Docker
     * E muito mais. Leia o [README do NFDOS](./nfdos/README.md) para saber qual é o ROADMAP.
