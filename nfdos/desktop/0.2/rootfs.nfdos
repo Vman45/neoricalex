@@ -61,7 +61,7 @@ apt install -y \
     ubiquity-slideshow-ubuntu \
     ubiquity-frontend-gtk-panel \
     ubiquity-ubuntu-artwork \
-    plymouth-theme-ubuntu-logo
+    plymouth-theme-ubuntu-logo \
     dosfstools \
     resolvconf \
     net-tools \
