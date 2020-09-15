@@ -12,8 +12,12 @@ Ou seja, por outras palavras, o NEORICALEX pode ser visto como:
 
 * Uma ferramenta para criar uma Distribuição Linux do Zero baseada no Ubuntu.
 * Dentro da Distribuição incluir:
+    * Uma Firewall
+    * Um Proxy Reverso
+    * Um Load Balancer
     * Um Cluster LXC/LXD
     * Um Cluster Docker
+    * Uma VPN
     * E muito mais...
     
 Leia o [README do NFDOS](./nfdos/README.md) para saber qual é o ROADMAP.
