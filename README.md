@@ -35,7 +35,7 @@ bash shell
 ```
 Aguarde que todo o processo seja finalizado. Ao final do processo uma imagem ISO será gerada em:
 ```bash
-neoricalex/nfdos/desktop/0.3/nfdos.iso
+neoricalex/nfdos/desktop/0.2/nfdos.iso
 ```
 
 Após a imagem ISO ser gerada, use e/ou instale normalmente em qualquer Máquina Virtual (VPS) e/ou Computador Físico (Bare Metal).
