@@ -1,0 +1,77 @@
+# AArquivo a ser executado manualmente
+# LEMBRETES: https://linuxconfig.org/how-to-create-and-manage-kvm-virtual-machines-from-cli
+
+# Criar VM
+virt-install --name=nfdos \
+    --vcpus=1 \
+    --memory=1024 \
+    --cdrom=nfdos/desktop/0.3/nfdos.iso \
+    --disk size=5 \
+    --os-variant=ubuntu20.04 \
+    --network network=default
+
+# DADOS para a VM:
+#       usuario: root
+#       senha: vagrant
+#
+#       usuario: vagrant
+#       senha: vagrant
+
+# Executar na VM
+adduser vagrant
+sudo visudo -f /etc/sudoers.d/vagrant # Adicionar: vagrant ALL=(ALL) NOPASSWD: ALL
+sudo apt-get install -y openssh-server
+
+mkdir -p /home/vagrant/.ssh
+chmod 0700 /home/vagrant/.ssh
+
+wget --no-check-certificate \
+    https://raw.githubusercontent.com/hashicorp/vagrant/master/keys/vagrant.pub \
+    -O /home/vagrant/.ssh/authorized_keys
+
+chmod 0600 /home/vagrant/.ssh/authorized_keys
+chown -R vagrant /home/vagrant/.ssh
+
+sudo vi /etc/ssh/sshd_config # Configurar as variaveis abaixo:
+```bash
+PubKeyAuthentication yes
+AuthorizedKeysFile %h/.ssh/authorized_keys
+PermitEmptyPasswords no
+PasswordAuthentication no
+```
+sudo service ssh restart
+
+sudo apt install -y gcc linux-headers-$(uname -r) build-essential dkms
+
+# Executar no HOST
+
+## Criar Box
+cd dev/nfdos/box
+
+sudo cp /var/lib/libvirt/images/nfdos.qcow2 .
+mv nfdos.qcow2 box.img
+
+sudo chown $USER:$USER box.img
+tar cvzf nfdos.box metadata.json Vagrantfile box.img
+vagrant box add --name nfdos nfdos.box
+
+## Iniciar Box
+cd dev/nfdos
+
+vagrant init nfdos
+vagrant up --provider=libvirt
+
+vagrant halt # Desliga a Box
+vagrant destroy # Deletar a Box
+
+
+
+
+#sudo adduser $USER libvirt
+#sudo adduser $USER libvirt-qemu
+#sudo adduser $USER kvm
+#newgrp libvirt
+#newgrp libvirt-qemu
+#newgrp kvm
+
+#sudo systemctl enable --now libvirtd

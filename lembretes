@@ -11,4 +11,36 @@ source env/bin/activate
 pip install mkdocs
 mkdocs new .
 
+sudo apt-get install p7zip-full p7zip-rar
+7z x nfdos.iso
+mkisofs -o src/ nfdos-server.iso
 
+sudo apt install cinnamon-desktop-environment
+
+Unsquash: https://www.youtube.com/watch?v=1mMXzgzHeE4&ab_channel=KrisOcchipinti
+
+https://core.docs.ubuntu.com/en/image/image-building
+echo -e "$inicio_cor Instalando LXD ... $fim_cor"
+# LEMBRETES: https://www.cyberciti.biz/faq/install-lxd-on-ubuntu-20-04-lts-using-apt/
+snap install lxd
+adduser $USER lxd
+newgrp lxd
+
+# TODO: Preparar Docker: https://linuxcontainers.org/lxd/docs/master/#support-and-discussions
+
+$ pacman -S libvirt vagrant
+$ vagrant plugin install vagrant-mutate
+$ vagrant plugin install vagrant-libvirt
+$ systemctl enable libvirtd
+$ systemctl start libvirtd
+$ vagrant init [box_name]
+$ vagrant up
+$ vagrant ssh
+
+apt install -y \
+    #virtinst \
+    #virt-manager \
+    #bridge-utils \
+    vagrant \
+    vagrant-libvirt \
+    vagrant-mutate

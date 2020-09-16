@@ -1,0 +1,125 @@
+# REF: https://misc.flogisoft.com/bash/tip_colors_and_formatting
+inicio_cor="\033[0;32m"
+cor_amarela="\033[0;93m"
+fim_cor="\033[0m"
+
+echo -e "$inicio_cor Executando o rootfs.nfdos $fim_cor"
+
+echo -e "$inicio_cor Montando o /proc /sys e /dev/pts $fim_cor"
+mount none -t proc /proc
+mount none -t sysfs /sys
+mount none -t devpts /dev/pts
+
+echo -e "$inicio_cor Exportando as variáveis de ambiente $fim_cor"
+export HOME=/root
+#export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
+export LC_ALL="C"
+
+echo -e "$inicio_cor Adicionando a sources.list dos pacotes deb $fim_cor"
+cat <<EOF > /etc/apt/sources.list
+deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+
+deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+
+deb http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+
+deb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+
+deb http://archive.canonical.com/ubuntu focal partner
+deb-src http://archive.canonical.com/ubuntu focal partner
+EOF
+
+echo -e "$inicio_cor Atualizando o gerenciador de pacotes deb $fim_cor"
+apt update
+
+echo -e "$inicio_cor Instalando o systemd $fim_cor"
+apt install -y systemd-sysv 
+
+echo -e "$inicio_cor Criando o divert $fim_cor"
+dbus-uuidgen > /etc/machine-id
+ln -fs /etc/machine-id /var/lib/dbus/machine-id
+dpkg-divert --local --rename --add /sbin/initctl
+ln -s /bin/true /sbin/initctl
+
+echo -e "$inicio_cor Instalando os pacotes base $fim_cor"
+apt install -y \
+    ubuntu-minimal \
+    casper \
+    lupin-casper \
+    discover \
+    laptop-detect \
+    os-prober \
+    network-manager \
+    resolvconf \
+    net-tools \
+    wireless-tools \
+    #wpagui \
+    locales \
+    dosfstools \
+    ssl-cert \
+    linux-generic
+
+echo -e "$inicio_cor Instalando pacotes adicionais para o Live CD $fim_cor"
+apt install -y \
+    ubiquity \
+    ubiquity-casper \
+    ubiquity-frontend-gtk \
+    ubiquity-frontend-debconf \
+    ubiquity-slideshow-ubuntu \
+    ubiquity-frontend-gtk-panel \
+    ubiquity-ubuntu-artwork \
+    plymouth-theme-ubuntu-logo
+
+echo -e "$inicio_cor Instalando pacotes úteis ... $fim_cor"
+apt install -y \
+    apt-transport-https \
+    terminator \
+    curl \
+    less \
+    tmux \
+    openssh-server \
+    gvfs \
+    linux-headers-$(uname -r) \
+    build-essential \
+    dkms \
+    gedit
+
+echo -e "$inicio_cor Configurando a rede $fim_cor"
+dpkg-reconfigure resolvconf
+
+cat <<EOF > /etc/NetworkManager/NetworkManager.conf
+[main]
+rc-manager=resolvconf
+plugins=ifupdown,keyfile
+dns=dnsmasq
+[ifupdown]
+managed=false
+EOF
+
+dpkg-reconfigure network-manager
+
+echo -e "$inicio_cor Instalar o Visual Studio Code $fim_cor"
+#if [ ! -x "$(command -v code)" ]; then
+#    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+#    install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+#    echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+#    rm microsoft.gpg
+#    apt update
+#    apt install -y code
+#fi
+
+
+echo -e "$cor_amarela # TODO: Adicionar o Template da GRUB $fim_cor"
+# REF: http://ubuntuhandbook.org/index.php/2017/06/vimix-grub2-theme-makes-ubuntu-boot-loader-look-prettier/
+
+echo -e "$cor_amarela # TODO: Adicionar o Template do Boot Splash Screen $fim_cor"
+# REF: https://linuxcool.ru/en/how-to-install-plymouth-system-boot-theme-on-ubuntu-20-04/
+
+echo -e "$cor_amarela # TODO: Adicionar a Fonte Menlo $fim_cor"
+
+echo -e "$cor_amarela # TODO: Configurar Vagrant LibVirt $fim_cor"
+# REF: https://www.youtube.com/watch?v=N7i14Icul_c&ab_channel=Geek%27sLesson

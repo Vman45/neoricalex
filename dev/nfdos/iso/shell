@@ -32,7 +32,7 @@ echo "Setar algumas variáveis de ambiente para nos facilitar a vida..."
 export NEORICALEX=$(pwd)
 export NEORICALEX_DEV=$NEORICALEX/desktop
 export NEORICALEX_DEV_BACKEND=$NEORICALEX_DEV/backend
-export NFDOS_ROOT=$NEORICALEX_DEV/0.2
+export NFDOS_ROOT=$NEORICALEX_DEV/0.3
 export NFDOS_ROOTFS=$NFDOS_ROOT/rootfs
 export NFDOS_DISCO=$NFDOS_ROOT/nfdos.img
 
@@ -67,10 +67,10 @@ time testar_nfdos
 
 echo ""
 
-#echo "Iniciando o NFDOS... Divirta-se!"
+echo "A imagem ISO do NFDOS Desktop está localizada em $NFDOS_ROOT/nfdos.iso"
+
+echo "Iniciando o NFDOS Desktop. Divirta-se!"
 #VBoxManage startvm "NFDOS"
 #sudo rm -rf $NFDOS_ROOT/nfdos.iso
-
-echo "A imagem ISO do NFDOS Desktop está localizada em $NFDOS_ROOT/nfdos.iso
 
 echo "Obrigado por usar o NEORICALEX e o NFDOS. Até já :-)"
