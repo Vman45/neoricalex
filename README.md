@@ -38,11 +38,12 @@ Mas é claro, ainda não chegamos lá. Leia o [README do NFDOS](./dev/nfdos/iso/
 
 ## Início Rápido
 
-**Requisitos**
+### Requisitos
 
 * Uma distribuição Ubuntu >= 18.04
 
-**Como iniciar**
+### Dando início
+
 ```bash
 # Instalar o Git
 sudo apt install git -y
@@ -56,7 +57,7 @@ cd neoricalex
 # Iniciar o NEORICALEX
 bash shell
 ```
-Durante o processo de criação da ISO é necessário alguma interatividade.
+Durante o processo de criação da ISO é necessário alguma interatividade de sua parte.
 
 Logo no inicio do processo é necessário que forneça sua senha de *root*, para que seu computador seja atualizado, e para que os requerimentos possam ser instalados.
 
