@@ -4,20 +4,20 @@
 
 O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma e/ou Ambiente de Trabalho. O local onde eu condenso tudo o que eu sei fazer em TI.
 
-A ideia de criação do NEORICALEX surgiu de uma necessidade minha pessoal quando, em Fevereiro 2020 eu fiquei desempregado com a pandemia do COVID19. Foi preciso encontrar uma forma de pagar as contas ao final do mês, e, decidi de monetizar meu conhecimento trabalhando em meu próprio projeto pessoal.
+A ideia de criação do [NEORICALEX](https://neoricalex.com.br) surgiu de uma necessidade minha pessoal quando, em Fevereiro 2020 eu fiquei desempregado com a pandemia do COVID19. Foi preciso encontrar uma forma de pagar as contas ao final do mês, e, decidi de monetizar meu conhecimento trabalhando em meu próprio projeto pessoal.
 
-O NEORICALEX é um framework de trabalho com 3 ambientes:
+O [NEORICALEX](https://neoricalex.com.br) é um framework de trabalho com 3 ambientes:
 * **Ambiente de Desenvolvimento** - Um Ambiente baseado no Vagrant que vamos usar para desenvolver todo o projeto.
 * **Ambiente de Homologação** - Um Ambiente baseado no Virtualbox que vamos usar para testarmos o projeto.
 * **Ambiente de Produção** - Um Ambiente baseado na Cloud (Digital Ocean, Google Cloud, IBM) para fazermos o Deploy do Projeto.
 
-A minha ideia principal para o projeto é criar os 3 ambientes com apenas um comando, e depois vender o conhecimento através de um curso online, a que dei o nome de **COPED**.
+A minha ideia principal para o projeto [NEORICALEX](https://neoricalex.com.br) é criar os 3 ambientes com apenas um comando, e depois vender o conhecimento através de um curso online, a que dei o nome de **COPED**.
 
 Para conseguir chegar nesse objetivo, eu decidi de criar uma Distribuição Linux do Zero. Enfim, quase do zero. Na verdade isso é o meu "sonho". Por enquanto preciso monetizar. Então eu optei por seguir o atalho de criar um "Ubuntu from scratch".
 
 Por outras palavras, eu não comecei no Assembly. Comecei bem mais na frente, criando uma versão customizada do Ubuntu 20.04 do completo zero. Dessa forma economizo um bom tempo.
 
-O NEORICALEX pode ser visto como:
+O [NEORICALEX](https://neoricalex.com.br) pode ser visto como:
 
 * Uma ferramenta para criar uma Distribuição Linux do Zero baseada no Ubuntu.
     * Nessa Distribuição a que dei o nome **NFDOS**, existe, ou vai existir:
@@ -28,9 +28,9 @@ O NEORICALEX pode ser visto como:
         * Um Cluster Docker
         * Uma VPN
         * E muito mais...
-* Uma ferramenta para criar um ambiente de desenvolvimento no Vagrant, tendo o NFDOS como sistema operativo padrão.
-* Uma ferramenta para criar um ambiente de homologação no VirtualBox, tendo o NFDOS como sistema operativo padrão.
-* Uma ferramenta para criar um ambiente de produção na Cloud (Google, IBM, Digital Ocean), tendo o NFDOS como sistema operativo padrão.
+* Uma ferramenta para criar um ambiente de desenvolvimento baseado no Vagrant, tendo o NFDOS como sistema operativo padrão.
+* Uma ferramenta para criar um ambiente de homologação baseado no VirtualBox, tendo o NFDOS como sistema operativo padrão.
+* Uma ferramenta para criar um ambiente de produção baseado na Cloud (Google, IBM, Digital Ocean), tendo o NFDOS como sistema operativo padrão.
 
 O detalhe é, como já comentei, eu quero que tudo seja feito com um único comando.
     
@@ -42,7 +42,7 @@ Mas é claro, ainda não chegamos lá. Leia o [README do NFDOS](./dev/nfdos/iso/
 
 * Uma distribuição Ubuntu >= 18.04
 
-
+**Como iniciar**
 ```bash
 # Instalar o Git
 sudo apt install git -y
