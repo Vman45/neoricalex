@@ -64,7 +64,6 @@ sudo rm -rf $NFDOS_ROOTFS/rootfs_footer.nfdos
 
 echo "OK. Neste ponto a nossa imagem de disco (nfdos.img) está criada."
 echo "Agora vamos criar uma imagem de CD/DVD para que possamos rodar ela em qualquer Computador/VPS/VM/Etc"
-echo "Antes porém, vamos remover o rootfs.nfdos do $NFDOS_ROOTFS pois não é mais necessário..."
 echo "# INFO: Vai aparecer vários \"Unrecognised xattr prefix system.posix_acl_access\" mas não é nada de preocupante :-)"
 
 echo "Criar imagem de CD/DVD (nfdos.iso)"
