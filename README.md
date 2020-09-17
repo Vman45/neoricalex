@@ -7,11 +7,11 @@ O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma e/ou Ambiente de
 A ideia de criação do NEORICALEX surgiu de uma necessidade minha pessoal quando, em Fevereiro 2020 eu fiquei desempregado com a pandemia do COVID19. Foi preciso encontrar uma forma de pagar as contas ao final do mês, e, decidi de monetizar meu conhecimento trabalhando em meu próprio projeto pessoal.
 
 O NEORICALEX é um framework de trabalho com 3 ambientes:
-* Ambiente de Desenvolvimento
-* Ambiente de Homologação
-* Ambiente de Produção
+* Ambiente de Desenvolvimento - Um Ambiente baseado no Vagrant que vamos usar para desenvolver todo o projeto.
+* Ambiente de Homologação - Um Ambiente baseado no Virtualbox que vamos usar para testarmos o projeto.
+* Ambiente de Produção - Um Ambiente baseado na Cloud (Digital Ocean, Google Cloud, IBM) para fazermos o Deploy do Projeto.
 
-A minha ideia principal para o projeto é criar os 3 ambientes com apenas um comando.
+A minha ideia principal para o projeto é criar os 3 ambientes com apenas um comando, e depois vender o conhecimento através de um curso online, a que dei o nome de **COPED**.
 
 Para conseguir chegar nesse objetivo, eu decidi de criar uma Distribuição Linux do Zero. Enfim, quase do zero. Na verdade isso é o meu "sonho". Por enquanto preciso monetizar. Então eu optei por seguir o atalho de criar um "Ubuntu from scratch".
 
@@ -38,6 +38,11 @@ Mas é claro, ainda não chegamos lá. Leia o [README do NFDOS](./dev/nfdos/iso/
 
 ## Início Rápido
 
+**Requisitos**
+
+* Uma distribuição Ubuntu >= 18.04
+
+
 ```bash
 # Instalar o Git
 sudo apt install git -y
@@ -53,7 +58,7 @@ bash shell
 ```
 Durante o processo de criação da ISO é necessário alguma interatividade.
 
-Logo no inicio do processo é necessário que forneça sua senha de *root*, para que seu computador seja atualizado e para que os requerimentos possam ser instalados.
+Logo no inicio do processo é necessário que forneça sua senha de *root*, para que seu computador seja atualizado, e para que os requerimentos possam ser instalados.
 
 Depois vai aparecer a tela dos termos da licença do VirtualBox da Oracle (imagem abaixo):
 
@@ -71,23 +76,23 @@ Depois com setas "*Cima/Baixo*" selecione o *Portuguese* ou *Portuguese(Brazil)*
 
 ![Print Screen 004](./docs/imagens/004.png)
 
-Tela seguinte é referente ao teclado. De igual forma setas "*Cima/Baixo*" selecione o *Portuguese* ou *Portuguese(Brazil)*, tecla *TAB* para selecionar o *OK*, e *ENTER* para continuar.
+Tela seguinte é referente ao teclado. De igual forma, setas "*Cima/Baixo*", selecione o *Portuguese* ou *Portuguese(Brazil)*, tecla *TAB* para selecionar o *OK*, e *ENTER* para continuar.
 
 ![Print Screen 005](./docs/imagens/005.png)
 
-Tela seguinte é referente à fonte da consola. Igual, setas "*Cima/Baixo*" selecione o *Guess optimal character set*, tecla *TAB* para selecionar o *OK*, e *ENTER* para continuar.
+Tela seguinte é referente à fonte da consola. Igual, setas "*Cima/Baixo*", selecione o *Guess optimal character set*, tecla *TAB* para selecionar o *OK*, e *ENTER* para continuar.
 
 ![Print Screen 006](./docs/imagens/006.png)
 
-Nesta tela já é referente à configuração da rede. Tecla *TAB* para selecionar o *Yes* e tecla *ENTER* para continuar.
+Nesta tela já é referente à configuração da rede. Tecla *TAB* para selecionar o *Yes*, e tecla *ENTER* para continuar.
 
 ![Print Screen 007](./docs/imagens/007.png)
 
-Nesta tela é apenas a informação de que teremos de reiniciar o pc. No caso estamos a criar uma imagem ISO, então a informação é "inútil" para nós. Seja como fôr, vamos continuar com a tecla *TAB* para selecionar o *OK* e *ENTER* para continuar.
+Nesta tela é apenas a informação de que teremos de reiniciar o pc. No caso estamos a criar uma imagem ISO, então a informação é "inútil" para nós. Seja como fôr, vamos continuar com a tecla *TAB* para selecionar o *OK*, e *ENTER* para continuar.
 
 Após passar esta etapa, nada mais vai ser preciso de sua parte. A única excepção é referente à senha de *root*, que poderá ser pedida novamente quando for necessário entrar no *CHROOT* do NFDOS, e/ou, na fase de criação da ISO própriamente dita. Porém aqui já depende do tempo que seu computador fica com a senha sudo ativa. Então pode ser até que nem peça mais a senha.
 
-De momento, quando a imagem ISO do NFDOS estiver criada, uma máquina virtual será criada no VirtualBox, máquina essa que será iniciada automáticamente já com o sistema "Live" do NFDOS Desktop funcionando.
+De momento, quando a imagem ISO do NFDOS estiver criada, uma máquina virtual será criada automáticamente no VirtualBox, máquina essa que será iniciada também automáticamente já com o sistema "Live" do NFDOS Desktop funcionando.
 
 Como nada foi feito ainda no *initrd*, o sistema Live NFDOS Desktop nada mais é que uma versão simplificada do Live CD do Ubuntu 20.04. No entanto, por enquanto sem o ZFS, pois a licença da Oracle não me permite de distribuir uma ISO já com o ZFS instalado.
 
