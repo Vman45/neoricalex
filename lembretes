@@ -1,5 +1,12 @@
-# Requerimentos
-sudo apt install make debootstrap -y
+# Checkar md5sum
+md5sum iso nfdos.iso
+
+# Limpar Grub
+sudo apt-get purge $( dpkg --list | grep -P -o "linux-image-\d\S+" | grep -v $(uname -r | grep -P -o ".+\d") )
+sudo update-grub2
+
+# Criar senha cripto 
+mkpasswd -m sha-512
 
 # Py
 sudo apt install python3-pip -y
@@ -27,20 +34,3 @@ adduser $USER lxd
 newgrp lxd
 
 # TODO: Preparar Docker: https://linuxcontainers.org/lxd/docs/master/#support-and-discussions
-
-$ pacman -S libvirt vagrant
-$ vagrant plugin install vagrant-mutate
-$ vagrant plugin install vagrant-libvirt
-$ systemctl enable libvirtd
-$ systemctl start libvirtd
-$ vagrant init [box_name]
-$ vagrant up
-$ vagrant ssh
-
-apt install -y \
-    #virtinst \
-    #virt-manager \
-    #bridge-utils \
-    vagrant \
-    vagrant-libvirt \
-    vagrant-mutate

@@ -1,10 +1,4 @@
-# Atualizar variáveis
-# TODO: Refatorar as variáveis para não haver redundancia
-export NEORICALEX_ROOT=$(pwd)
-export NFDOS_ROOT=$NEORICALEX_ROOT/desktop/0.3
-export NFDOS_ROOTFS=$NFDOS_ROOT/rootfs
-export NFDOS_DISCO=$NFDOS_ROOT/nfdos.img
-export NFDOS_DEV=$NEORICALEX_ROOT/testes/nfdos
+#!/bin/bash
 
 echo "Checkando se a $NFDOS_ROOT existe"
 if [ ! -d "$NFDOS_ROOT" ]; then
@@ -50,9 +44,10 @@ echo "Montar a /dev e /run"
 sudo mount --bind /dev $NFDOS_ROOTFS/dev
 sudo mount --bind /run $NFDOS_ROOTFS/run
 
-echo "Copiar a rootfs_*.nfdos para o $NFDOS_ROOTFS"
+echo "Copiar arquivos necessários"
 sudo cp $NFDOS_ROOT/rootfs_head.nfdos $NFDOS_ROOTFS/.
 sudo cp $NFDOS_ROOT/rootfs_footer.nfdos $NFDOS_ROOTFS/.
+sudo cp -a $NFDOS_ROOT/neoricalex $NFDOS_ROOTFS/opt
 
 echo "Entrar no $NFDOS_ROOTFS e executar o rootfs_head.nfdos"
 sudo chroot $NFDOS_ROOTFS /bin/bash rootfs_head.nfdos
@@ -71,7 +66,6 @@ echo "OK. Neste ponto a nossa imagem de disco (nfdos.img) está criada."
 echo "Agora vamos criar uma imagem de CD/DVD para que possamos rodar ela em qualquer Computador/VPS/VM/Etc"
 echo "Antes porém, vamos remover o rootfs.nfdos do $NFDOS_ROOTFS pois não é mais necessário..."
 echo "# INFO: Vai aparecer vários \"Unrecognised xattr prefix system.posix_acl_access\" mas não é nada de preocupante :-)"
-sudo rm $NFDOS_ROOTFS/rootfs.nfdos
 
 echo "Criar imagem de CD/DVD (nfdos.iso)"
 cd $NFDOS_ROOT

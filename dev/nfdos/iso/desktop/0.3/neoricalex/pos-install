@@ -1,0 +1,54 @@
+#!/bin/bash
+
+instalar_utilitarios(){
+    echo -e "$inicio_cor Instalando pacotes úteis ... $fim_cor"
+    apt install -y \
+            build-essential \
+            gcc \
+            dkms
+}
+instalar_ferramentas_desenvolvimento(){
+    apt install -y \
+        linux-headers-server   
+}
+
+
+instalar_vagrant(){
+echo -e "$inicio_cor Configurando o Vagrant... $fim_cor"
+useradd -m -p $6$LeZC5G4JLDCj$2c930hxYg6Mt4/n2210KYYmIVdaOFOSYoknLgmngh0rx1hymIlbh5uF2BFDQwnXA6DfgSsbiQlNvLLvDh0Xv8. -s /bin/bash vagrant
+cat <<EOF > /etc/sudoers.d/vagrant
+vagrant ALL=(ALL) NOPASSWD: ALL
+EOF
+mkdir -p /home/vagrant/.ssh
+chmod 0700 /home/vagrant/.ssh
+
+wget --no-check-certificate \
+    https://raw.githubusercontent.com/hashicorp/vagrant/master/keys/vagrant.pub \
+    -O /home/vagrant/.ssh/authorized_keys
+
+chmod 0600 /home/vagrant/.ssh/authorized_keys
+chown -R vagrant /home/vagrant/.ssh
+
+service ssh restart  
+}
+
+
+lista_coisas_para_fazer(){
+    echo -e "$cor_amarela # TODO: Adicionar o Template da GRUB $fim_cor"
+    # REF: http://ubuntuhandbook.org/index.php/2017/06/vimix-grub2-theme-makes-ubuntu-boot-loader-look-prettier/
+
+    echo -e "$cor_amarela # TODO: Adicionar o Template do Boot Splash Screen $fim_cor"
+    # REF: https://linuxcool.ru/en/how-to-install-plymouth-system-boot-theme-on-ubuntu-20-04/
+
+    echo -e "$cor_amarela # TODO: Adicionar a Fonte Menlo $fim_cor"
+
+    echo -e "$inicio_cor # TODO: Instalar o Visual Studio Code $fim_cor"
+    #if [ ! -x "$(command -v code)" ]; then
+    #    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    #    install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+    #    echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+    #    rm microsoft.gpg
+    #    apt update
+    #    apt install -y code
+    #fi   
+}

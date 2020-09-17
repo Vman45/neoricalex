@@ -1,0 +1,11 @@
+#!/bin/bash
+
+testar_nfdos() {
+    # INFO: Função para medir o tempo de "Compilação". 
+    #       Não queremos que todo o processo demore mais que as antigas instalações do Windows.
+    #       Tempo que temos para fazer, montar e/ou compilar tudo: 45 minutos
+    #       Tempo atual em um AMD FX 8350, 8 Cores, 16GB RAM, 100MB/s de Conexão Internet: 16 Minutos
+
+    bash $NFDOS_ROOT/shell  
+}
+time testar_nfdos

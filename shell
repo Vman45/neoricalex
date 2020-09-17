@@ -1,58 +1,186 @@
 #!/bin/bash
 
-echo "Olá $USER tudo bem?"
-echo "Eu sou o Ricardo Lourenço (Neo), Desenvolvedor e Maintainer do NEORICALEX"
-echo "Desde já o meu muito obrigado por testar tanto o NEORICALEX, quanto indiretamente o meu \"filhinho\" chamado NFDOS :-)"
-
-
-echo "Vou começar por checkar qual é a distribuição Linux que o $HOSTNAME está executando."
-echo "Aguarde 10 segundinhos por favor ..."
-sleep 7
-# REF: https://stackoverflow.com/questions/29581754/how-to-find-linux-distribution-name-using-shell-script
-UNAME=$(uname | tr "[:upper:]" "[:lower:]")
-if [ "$UNAME" == "linux" ]; then
-    if [ -f /etc/lsb-release -o -d /etc/lsb-release.d ]; then
-        DISTRO=$(lsb_release -i | cut -d: -f2 | sed s/'^\t'//)
-    else
-        DISTRO=$(ls -d /etc/[A-Za-z]*[_-][rv]e[lr]* | grep -v "lsb" | cut -d'/' -f3 | cut -d'-' -f1 | cut -d'_' -f1)
+boas_vindas(){
+    echo "Olá $USER tudo bem?"
+    echo "Eu sou o Ricardo Lourenço (Neo), Desenvolvedor e Maintainer do NEORICALEX"
+    echo "Desde já o meu muito obrigado por testar tanto o NEORICALEX, quanto indiretamente o meu \"filhinho\" chamado NFDOS :-)"  
+}
+checkar_distro_host(){
+    echo "Vou começar por checkar qual é a distribuição Linux que o $HOSTNAME está executando."
+    echo "Aguarde 10 segundinhos por favor ..."
+    sleep 7
+    # REF: https://stackoverflow.com/questions/29581754/how-to-find-linux-distribution-name-using-shell-script
+    UNAME=$(uname | tr "[:upper:]" "[:lower:]")
+    if [ "$UNAME" == "linux" ]; then
+        if [ -f /etc/lsb-release -o -d /etc/lsb-release.d ]; then
+            DISTRO=$(lsb_release -i | cut -d: -f2 | sed s/'^\t'//)
+        else
+            DISTRO=$(ls -d /etc/[A-Za-z]*[_-][rv]e[lr]* | grep -v "lsb" | cut -d'/' -f3 | cut -d'-' -f1 | cut -d'_' -f1)
+        fi
     fi
-fi
-[ "$DISTRO" == "" ] && export DISTRO=$UNAME
-unset UNAME
+    [ "$DISTRO" == "" ] && export DISTRO=$UNAME
+    unset UNAME
 
-if [ "$DISTRO" == "Ubuntu" ]; then
-    echo "Aparentemente o $HOSTNAME está rodando o $DISTRO. Tudo OK então :-)"
-else
-    echo "Aparentemente o $HOSTNAME não está rodando no Ubuntu. O $USER tem o apt instalado?"
-    echo "# TODO: Checkar se o USER tem o APT instalado."
-    sleep 3
-fi
-unset DISTRO
+    if [ "$DISTRO" == "Ubuntu" ]; then
+        echo "Aparentemente o $HOSTNAME está rodando o $DISTRO. Tudo OK então :-)"
+    else
+        echo "Aparentemente o $HOSTNAME não está rodando no Ubuntu. O $USER tem o apt instalado?"
+        echo "# TODO: Checkar se o USER tem o APT instalado."
+        sleep 3
+    fi
+    unset DISTRO
+}
+atualizar_host(){
+    echo "Atualizar os repositórios e atualizar o $HOSTNAME..."
+    sudo apt update && sudo apt upgrade -y    
+}
+instalar_requerimentos(){
+    echo "Instalar os requerimentos.."
+    sudo apt install -y \
+        binutils \
+        debootstrap \
+        squashfs-tools \
+        xorriso \
+        grub-pc-bin \
+        grub-efi-amd64-bin \
+        mtools
 
-echo "Atualizar os repositórios e atualizar o $HOSTNAME..."
-sudo apt update && sudo apt upgrade -y
+    sudo apt install -y \
+        virtualbox \
+        virtualbox-ext-pack
 
-echo "Instalar os requerimentos.."
-sudo apt install -y \
-    binutils \
-    debootstrap \
-    squashfs-tools \
-    xorriso \
-    grub-pc-bin \
-    grub-efi-amd64-bin \
-    mtools \
-    libosinfo-bin \
-    vagrant \
-    vagrant-libvirt \
-    vagrant-mutate
+    #sudo apt install -y \       
+    #    libosinfo-bin \
+    #    virtinst \
+    #    virt-manager \
+    #    bridge-utils \
+    #    vagrant \
+    #    vagrant-libvirt \
+    #    vagrant-mutate
 
-echo "Setar variáveis de ambiente..."
-export NEORICALEX_HOME=$(pwd)
-export NFDOS_HOME=$NEORICALEX_HOME/dev/nfdos
+    #echo "Iniciar serviços..."
+    #sudo systemctl enable --now libvirtd
 
-cd $NFDOS_HOME
+    #echo "Adicionar $USER aos grupos..."
+    # TODO: Fazer um for loop
 
-vagrant up --provider=libvirt
+    #if id -nG "$USER" | grep -qw "libvirt"; then
+    #    echo "O $USER já pertence ao grupo libvirt"
+    #else
+    #    sudo adduser `id -un` libvirt
+    #    newgrp libvirt
+    #    echo "INFO: Em caso de erro de permissões, reinicie o $HOSTNAME"
+    #fi
 
-cd $NEORICALEX_HOME
+    #if id -nG "$USER" | grep -qw "kvm"; then
+    #    echo "O $USER já pertence ao grupo kvm"
+    #else
+    #    sudo adduser `id -un` kvm
+    #    newgrp kvm
+    #    echo "INFO: Em caso de erro de permissões, reinicie o $HOSTNAME"
+    #fi
+}
+setar_variaveis_ambiente(){
+    echo "Setar variáveis de ambiente..."
+    # NEORICALEX
+    export NEORICALEX_HOME=$(pwd)
+    # NFDOS Desktop
+    export NFDOS_HOME=$NEORICALEX_HOME/dev/nfdos
+    export NFDOS_ROOT=$NFDOS_HOME/iso/desktop/0.3
+    export NFDOS_ROOTFS=$NFDOS_ROOT/rootfs
+    export NFDOS_DISCO=$NFDOS_ROOT/nfdos.img
+    # VirtualBox
+    export NOME_DA_VM=NFDOS
+    export PASTA_DA_VM=$NFDOS_HOME/vm/virtualbox
+}
+criar_iso_nfdos(){
+    cd $NFDOS_HOME/iso
+    bash criar-iso
+    echo ""
+    echo "A imagem ISO do NFDOS Desktop está localizada em $NFDOS_ROOT/nfdos.iso"
+    cd $NEORICALEX_HOME
+}
+criar_vm_virtualbox(){
+    echo "Criando a máquina virtual $NOME_DA_VM Desktop no VirtualBox..."
+    VBoxManage createvm --name $NOME_DA_VM --ostype "Ubuntu_64" --register --basefolder $PASTA_DA_VM
+    #Setar memoria e rede
+    VBoxManage modifyvm $NOME_DA_VM --ioapic on
+    VBoxManage modifyvm $NOME_DA_VM --memory 1024 --vram 128
+    VBoxManage modifyvm $NOME_DA_VM --nic1 nat
+    #Criar disco e conectar a iso NFDOS
+    VBoxManage createhd --filename $PASTA_DA_VM/$NOME_DA_VM/$NOME_DA_VM.vdi --size 80000 --format VDI
+    VBoxManage storagectl $NOME_DA_VM --name "SATA Controller" --add sata --controller IntelAhci
+    VBoxManage storageattach $NOME_DA_VM --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium  $PASTA_DA_VM/$NOME_DA_VM/$NOME_DA_VM.vdi
+    VBoxManage storagectl $NOME_DA_VM --name "IDE Controller" --add ide --controller PIIX4
+    VBoxManage storageattach $NOME_DA_VM --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium $NFDOS_ROOT/nfdos.iso
+    VBoxManage modifyvm $NOME_DA_VM --boot1 dvd --boot2 disk --boot3 none --boot4 none
 
+    #Habilitar o RDP
+    VBoxManage modifyvm $NOME_DA_VM --vrde on
+    VBoxManage modifyvm $NOME_DA_VM --vrdemulticon on --vrdeport 10001
+
+    #Iniciar a VM em modo Headless
+    #VBoxHeadless --startvm $NOME_DA_VM
+}
+criar_vm_kvm(){
+    echo "Criando uma VM no KVM com o NFDOS Desktop Live..."
+    virt-install --name=nfdos \
+        --vcpus=1 \
+        --memory=2048 \
+        --cdrom=$NFDOS_ROOT/nfdos.iso \
+        --disk size=10 \
+        --os-variant=ubuntu20.04 \
+        --network network=default
+}
+criar_vm_vagrant(){
+    cd $NFDOS_HOME
+
+    vagrant init nfdos
+    vagrant up --provider=libvirt
+    vagrant halt
+    vagrant destroy -f
+
+    cd $NFDOS_HOME/box
+
+    vagrant box remove nfdos
+    rm box.img nfdos.box
+
+    cd $NFDOS_HOME
+
+    rm Vagrantfile
+
+    cd $NEORICALEX_HOME
+}
+checkar_iso_nfdos(){
+    boas_vindas
+    checkar_distro_host
+    atualizar_host
+    instalar_requerimentos
+    setar_variaveis_ambiente
+
+    echo "Checkando se a $NFDOS_ROOT/nfdos.iso existe"
+    if [ ! -f "$NFDOS_ROOT/nfdos.iso" ]; then
+        criar_iso_nfdos
+    else
+        echo "A $NFDOS_ROOT/nfdos.iso existe"
+    fi
+}
+
+checkar_iso_nfdos
+criar_vm_virtualbox
+
+echo "Iniciando o NFDOS Desktop no VirtualBox..."
+VBoxManage startvm "NFDOS"
+echo "[INFO] Caso na primeira vez o NFDOS não arranque a seguir à GRUB, delete manualmente a VM no Virtualbox \n
+e execute novamente o \"bash shell\"."
+echo "Todo o processo de compilação da ISO será ignorado e apenas o processo de criação da VM será efetuado"
+echo "Não sei porquê, mas em alguns PC's não funciona \"de primeira\" :-)"
+
+#sudo rm -rf $NFDOS_ROOT/nfdos.iso
+#sudo rm -rf $NFDOS_ROOT/rootfs
+#sudo rm -rf $NFDOS_ROOT/image
+#sudo rm -rf $NFDOS_ROOT/nfdos.img
+#sudo apt autoremove -y
+#sudo autoclean -y
+
+# Copiar rootfs para a /opt
