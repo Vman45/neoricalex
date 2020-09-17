@@ -34,7 +34,7 @@ O NEORICALEX pode ser visto como:
 
 O detalhe é, como já comentei, eu quero que tudo seja feito com um único comando.
     
-Mas é claro, ainda não chegamos lá. Leia o [README do NFDOS](./dev/iso/README.md) para saber qual é o ROADMAP.
+Mas é claro, ainda não chegamos lá. Leia o [README do NFDOS](./dev/nfdos/iso/README.md) para saber qual é o ROADMAP.
 
 ## Início Rápido
 
