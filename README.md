@@ -7,9 +7,9 @@ O [NEORICALEX](https://neoricalex.com.br) é a minha Plataforma e/ou Ambiente de
 A ideia de criação do NEORICALEX surgiu de uma necessidade minha pessoal quando, em Fevereiro 2020 eu fiquei desempregado com a pandemia do COVID19. Foi preciso encontrar uma forma de pagar as contas ao final do mês, e, decidi de monetizar meu conhecimento trabalhando em meu próprio projeto pessoal.
 
 O NEORICALEX é um framework de trabalho com 3 ambientes:
-* Ambiente de Desenvolvimento - Um Ambiente baseado no Vagrant que vamos usar para desenvolver todo o projeto.
-* Ambiente de Homologação - Um Ambiente baseado no Virtualbox que vamos usar para testarmos o projeto.
-* Ambiente de Produção - Um Ambiente baseado na Cloud (Digital Ocean, Google Cloud, IBM) para fazermos o Deploy do Projeto.
+* **Ambiente de Desenvolvimento** - Um Ambiente baseado no Vagrant que vamos usar para desenvolver todo o projeto.
+* **Ambiente de Homologação** - Um Ambiente baseado no Virtualbox que vamos usar para testarmos o projeto.
+* **Ambiente de Produção** - Um Ambiente baseado na Cloud (Digital Ocean, Google Cloud, IBM) para fazermos o Deploy do Projeto.
 
 A minha ideia principal para o projeto é criar os 3 ambientes com apenas um comando, e depois vender o conhecimento através de um curso online, a que dei o nome de **COPED**.
 
