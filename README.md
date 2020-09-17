@@ -42,7 +42,7 @@ Mas é claro, ainda não chegamos lá. Leia o [README do NFDOS](./dev/nfdos/iso/
 
 * Uma distribuição Ubuntu >= 18.04
 
-### Dando início
+### Como iníciar
 
 ```bash
 # Instalar o Git
@@ -54,7 +54,7 @@ git clone https://github.com/neoricalex/neoricalex.git
 # Entrar na pasta neoricalex
 cd neoricalex
 
-# Iniciar o NEORICALEX
+# Iniciar
 bash shell
 ```
 Durante o processo de criação da ISO é necessário alguma interatividade de sua parte.
