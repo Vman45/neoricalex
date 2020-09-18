@@ -124,7 +124,7 @@ Obrigado desde já pelo "café" :-)
 * O código fonte para a criação da box do Vagrant está pronto, mas ainda falta configurar a ISO de forma a automatizar a criação da box.
 
 #### Ambiente de Homologação (VirtualBox)
-* O código fonte para a criação de uma máquina virtual com a imagem ISO do NFDOS está pronto.
+* O código fonte para a criação de uma máquina virtual com a imagem ISO do NFDOS está pronto. No entanto falta fazer a automatização da instalação do NFDOS Desktop na VM, assim como a automatização da criação da box Vagrant para o Ambiente de Desenvolvimento.
 
 #### Ambiente de Produção (Cloud){Digital Ocean, Google Cloud, IBM, Etc...}
 N/A
