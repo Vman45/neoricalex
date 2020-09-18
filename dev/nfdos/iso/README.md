@@ -1,5 +1,5 @@
 # NFDOS
-O NFDOS significa Neo Free Disk Opening System, e é um Sistema Operativo criado do zero.
+O NFDOS significa Neo Free Disk Operating System, e é um Sistema Operativo criado do zero.
 
 Eu não sei você, mas eu sempre quis saber como se faz um sistema operacional do zero. Mas isso apenas não bastava. Eu também queria saber como se faz um sistema de distribuição completo, onde eu digitava um comando ou dois, e eu tinha uma imagem ISO gerada para poder distribuir o meu sistema, ou usar em qualquer computador.
 
